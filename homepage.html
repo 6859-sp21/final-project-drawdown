@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" 
+        content="width=device-width, 
+        initial-scale=1.0, 
+        user-scalable=no" />
+  <title>homepage</title>
+  <style>
+
+    .image-container {
+  background-image: url("climate_refugees.jpg"); /* The image used - important! */
+  background-size: cover;
+  position: relative; /* Needed to position the cutout text in the middle of the image */
+  height: 800px; /* Some height */
+}
+
+@font-face {
+  font-family: AvenirNext;
+  src: url(avenirnext.otf);
+}
+.text {
+  color: white;
+  font-size: 10vw; /* Responsive font size */
+  font-weight: bold;
+  font-family: AvenirNext
+  margin: 0 auto; /* Center the text container */
+  padding: 10px;
+  width: 50%;
+  text-align: center; /* Center text */
+  position: absolute; /* Position text */
+  top: 50%; /* Position text in the middle */
+  left: 50%; /* Position text in the middle */
+  transform: translate(-50%, -50%); /* Position text in the middle */
+  mix-blend-mode: screen; /* This makes the cutout text possible */
+}
+.link {
+  color: white;
+  font-size: 2vw;
+  font-weight: bold;
+  position: absolute;
+  text-align: center;
+  top: 60%;
+  left: 47%;
+}
+  </style>
+</head>
+
+<body>
+
+  
+    <div class="image-container">
+        <div class="text">Storify</div>
+        <div class="link"><a href="read_story.html">Enter</a></div>
+      </div>
+
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link rel="stylesheet" href="style2.css">
+<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Roboto:400' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@500&family=Lato:wght@300;900&family=Rubik:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Aldrich|Arima+Madurai|Arvo|Henny+Penny|Indie+Flower|Libre+Baskerville|Pirata+One|Poiret+One|Sancreek|Satisfy|Share+Tech+Mono|Smokum|Snowburst+One|Special+Elite" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Della Respira' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet"> 
+<style>
+* {
+  box-sizing: border-box;
+}
+
+.row {
+  display: flex;
+}
+
+/* Create three equal columns that sits next to each other */
+.column {
+  flex: 33.33%;
+  padding: 5px; 
+}
+img {
+  border-radius: 8px;
+}
+.header {
+  padding: 0px;
+  text-align: center;
+  background: skyblue;
+  color: white;
+  font-size: 20px;
+  font-family: Arvo;
+}
+
+.collapsible {
+  background-color:burlywood;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  position: fixed;
+  outline: none;
+  font-size: 15px;
+  text-align: left;
+  border-radius: 4px;
+}
+
+.active, .collapsible:hover {
+  background-color: #555;
+}
+
+.collapsible:after {
+  content: '\002B';
+  color: white;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+.collapsible1 {
+    width: 20%;
+    top: 85%;
+    left: 20%;
+}
+.collapsible2 {
+    width: 20%;
+    top: 85%;
+    left: 60%;
+}
+
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.button1 {
+  background-color:white ; 
+  color:white; 
+  border: 2px solid #4CAF50;
+}
+
+.button1:hover {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.right {
+  margin: 0;
+  position: absolute;
+  top: 10%;
+  left: 85%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.active:after {
+  content: "\2212";
+}
+
+.content {
+  padding: 0 18px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  text-align: center;
+  background-color: #42C0FB;
+  position: relative;
+  top: 10%;
+}
+body {background-color: skyblue;}
+</style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>What's the Story?</h1>
+        <p>What links these images? Try to work out the story</p>
+      </div>
+
+<div class="row">
+    <div class="column">
+      <img src="emissions.jpg" alt="Snow" style="width:100%">
+    </div>
+    <div class="column">
+      <img src="greenhouse.jpg" alt="Forest" style="width:100%">
+    </div>
+    <div class="column">
+      <img src="heat.jpg" alt="Mountains" style="width:100%">
+    </div>
+  </div>
+  <button class="collapsible collapsible1">Explanation</button>
+  <div class="content">
+    <p>Carbon Dioxide is emitted from cars and burning things. As it rises it wraps around the planet and traps heat.</p>
+  </div>
+
+</div>
+<button class="collapsible collapsible2">Explanation</button>
+<div class="content">
+  <p>As the earth warms plants and animals are no longer able to live in their natural home.</p>
+</div>
+
+<div class="right">
+    <button class="button button1"><a href="new_animation2.html">Next</a></button>
+  </div>
+
+  <script>
+    var coll = document.getElementsByClassName("collapsible");
+    var i;
+    
+    for (i = 0; i < coll.length; i++) {
+      coll[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content.style.maxHeight){
+          content.style.maxHeight = null;
+        } else {
+          content.style.maxHeight = content.scrollHeight + "px";
+        } 
+      });
+    }
+    </script>
+
+
+</body>
+</html>
+
+
