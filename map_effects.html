@@ -7,7 +7,7 @@
 <script src="https://rawgit.com/susielu/d3-annotation/master/d3-annotation.min.js"></script>
 
 <!-- Create a div where the graph will take place -->
-<svg width="460" height="400" id="example1"></svg>
+
 
 <head>
     <!-- Fonts to load from fonts.google.com-->
@@ -22,6 +22,8 @@
 <link href='https://fonts.googleapis.com/css?family=Della Respira' rel='stylesheet'>
 </head>
 <style>
+
+
 
   .names {
   fill: none;
@@ -150,6 +152,17 @@
   color: white;
 }
 
+.svg-container{
+     display: block;
+     margin: 7 auto;
+  }
+
+  .svg-style {
+        background-color: lightblue;
+        display: block;
+        margin: auto;
+           }
+
 </style>
 
 <body>
@@ -177,8 +190,8 @@ var tip = d3.tip()
             })
 
 var margin = {top: 0, right: 0, bottom: 0, left: 0},
-            width = 960 - margin.left - margin.right,
-            height = 800 - margin.top - margin.bottom;
+            width = 1460 - margin.left - margin.right,
+            height = 750 - margin.top - margin.bottom;
 
 var color = d3.scaleThreshold()
     .domain([0.25,0.5,0.75,1,1.25,1.5, 1.75])
@@ -201,37 +214,6 @@ var projection = d3.geoMercator()
 
 var path = d3.geoPath().projection(projection);
 
-var legend = svg.selectAll('g.legendEntry')
-    .data(color.range().reverse())
-    .enter()
-    .append('g').attr('class', 'legendEntry');
-
-legend
-    .append('rect')
-    .attr("x", width - 250)
-    .attr("y", function(d, i) {
-       return i * 12;
-    })
-   .attr("width", 10)
-   .attr("height", 10)
-   .style("stroke", "grey")
-   .style("stroke-width", 0.5)
-   .style("fill", function(d){return d;}); 
-       //the data objects are the fill colors
-
-legend
-    .append('text')
-    .attr("x", width - 235) //leave 5 pixel space after the <rect>
-    .attr("y", function(d, i) {
-       return i * 12;
-    })
-    .attr("dy", "0.8em") //place text one line *below* the x,y point
-    .text(function(d,i) {
-        var extent = color.invertExtent(d);
-        //extent will be a two-element array, format it however you want:
-        var format = d3.format("0.2f");
-        return format(+extent[0]) + " - " + format(+extent[1]);
-    });
 
 svg.call(tip);
 
@@ -287,38 +269,12 @@ function ready(error, data, cotwo) {
         .text("Effects: In 20 Years, how will your country be affected?");
 
 
-        svg.append("text")
-        .attr("x", (width -189))             
-        .attr("y", 110)
-        .attr("text-anchor", "middle")  
-        .style("font-size", "12px") 
-        .style("fill", "grey")
-        .attr("font-family", "avenir next")
-        .text("Projected temperature ");
+     
 
+      
         svg.append("text")
-        .attr("x", (width -189))             
-        .attr("y", 120)
-        .attr("text-anchor", "middle")  
-        .style("font-size", "12px") 
-        .style("fill", "grey")
-        .attr("font-family", "avenir next")
-        .text("increase by 2040       ");
-
-        svg.append("text")
-        .attr("x", (width -98))             
-        .attr("y", 185)
-        .attr("dy", "0em")
-        .attr("text-anchor", "middle")  
-        .style("font-size", "10px") 
-        .style("font-weight", "") 
-        .style("fill", "black")
-        .attr("font-family", "avenir next")
-        .text("Significant increase in");
-
-        svg.append("text")
-        .attr("x", (width -98))             
-        .attr("y", 790)
+        .attr("x", (width -480))             
+        .attr("y", 675)
         .attr("dy", "0em")
         .attr("text-anchor", "middle")  
         .style("font-size", "10px")
@@ -326,84 +282,12 @@ function ready(error, data, cotwo) {
         .attr("font-family", "Della Respira")
         .text("Source: IPCC");
 
-        svg.append("text")
-        .attr("x", (width -98))             
-        .attr("y", 195)
-        .attr("dy", "0em")
-        .attr("text-anchor", "middle")  
-        .style("font-size", "10px") 
-        .style("font-weight", "") 
-        .style("fill", "black")
-        .attr("font-family", "avenir next")
-        .text(" Siberian temp could help agriculture");
 
         
 
-        svg.append("line")          // attach a line
-    .style("stroke", "black")  // colour the line
-    .attr("x1", (width -110))     // x position of the first end of the line
-    .attr("y1", 200)      // y position of the first end of the line
-    .attr("x2", (width -240))     // x position of the second end of the line
-    .attr("y2", 300);    // y position of the second end of the line
-
-    svg.append("line")          // attach a line
-    .style("stroke", "black")  // colour the line
-    .attr("x1", (width -700))     // x position of the first end of the line
-    .attr("y1", 430)      // y position of the first end of the line
-    .attr("x2", (width -820))     // x position of the second end of the line
-    .attr("y2", 450);    // y position of the second end of the line
-
-    svg.append("line")          // attach a line
-    .style("stroke", "black")  // colour the line
-    .attr("x1", (width -450))     // x position of the first end of the line
-    .attr("y1", 330)      // y position of the first end of the line
-    .attr("x2", (width -470))     // x position of the second end of the line
-    .attr("y2", 300);    // y position of the second end of the line
+ // y position of the second end of the line
 
 
-    svg.append("text")
-        .attr("x", (width -470))             
-        .attr("y", 280)
-        .attr("dy", "0em")
-        .attr("text-anchor", "middle")  
-        .style("font-size", "10px") 
-        .style("font-weight", "") 
-        .style("fill", "black")
-        .attr("font-family", "avenir next")
-        .text(" Glacier ");
-
-        svg.append("text")
-        .attr("x", (width -470))             
-        .attr("y", 290)
-        .attr("dy", "0em")
-        .attr("text-anchor", "middle")  
-        .style("font-size", "10px") 
-        .style("font-weight", "") 
-        .style("fill", "black")
-        .attr("font-family", "avenir next")
-        .text(" melt ");
-
-    svg.append("text")
-        .attr("x", (width -830))             
-        .attr("y", 460)
-        .attr("dy", "0em")
-        .attr("text-anchor", "middle")  
-        .style("font-size", "10px") 
-        .style("font-weight", "") 
-        .style("fill", "black")
-        .attr("font-family", "avenir next")
-        .text(" US Agriculture could be");
-
-        svg.append("text")
-        .attr("x", (width -830))             
-        .attr("y", 470)
-        .attr("dy", "0em")
-        .attr("text-anchor", "middle")  
-        .style("font-size", "10px") 
-        .style("font-weight", "") 
-        .style("fill", "black")
-        .attr("font-family", "avenir next")
-        .text(" seriously afftected ");
 
   svg.append("path")
       .datum(topojson.mesh(data.features, function(a, b) { return a.id !== b.id; }))
