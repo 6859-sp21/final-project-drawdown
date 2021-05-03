@@ -163,6 +163,20 @@
         margin: auto;
            }
 
+           footer{
+  text-align: left;
+}
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: black;
+  text-align: center;
+  font-family: Arvo;
+}
+
+
 </style>
 
 <body>
@@ -173,6 +187,13 @@
   <div class="left">
     <button class="button button2"><a href="circle_packing.html">Next</a></button>
   </div>
+</div>
+            
+<div class="footer">
+  <p><a href="https://www.ipcc-data.org/sim/gcm_clim/SRES_TAR/ddc_sres_emissions.html">IPCC Data</a></p> 
+  <p><a href="http://bl.ocks.org/denisemauldin/cb870e6f439864a5ae74d4fc561ac46f">Blocks</a></p>
+</div>
+
 
 <script src="https://d3js.org/d3.v4.min.js"></script>
 <script src="https://d3js.org/queue.v1.min.js"></script>
@@ -190,7 +211,7 @@ var tip = d3.tip()
             })
 
 var margin = {top: 0, right: 0, bottom: 0, left: 0},
-            width = 1460 - margin.left - margin.right,
+            width = 1800 - margin.left - margin.right,
             height = 750 - margin.top - margin.bottom;
 
 var color = d3.scaleThreshold()
@@ -259,7 +280,7 @@ function ready(error, data, cotwo) {
         });
 
     svg.append("text")
-        .attr("x", (width / 2))             
+        .attr("x", (width / 2) + 50)             
         .attr("y", 100 - (margin.top / 2))
         .attr("text-anchor", "middle")  
         .style("font-size", "18px") 

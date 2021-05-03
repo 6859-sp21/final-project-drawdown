@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/ >
-		<title>Smoothed D3.js Radar Chart</title>
+		<title>Causes Radar</title>
 
 		<!-- Google fonts -->
 		<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300" rel='stylesheet' type='text/css'>
@@ -104,7 +104,15 @@
   font-weight: 700;
 
 }
-
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: black;
+  text-align: center;
+  font-family: Arvo;
+}
 
 
 		</style>
@@ -125,6 +133,10 @@
 
 
 		<div class="radarChart"></div>
+		<div class="footer">
+			<p><a href="https://ourworldindata.org/emissions-by-sector">Source: Our World in Data</a></p> 
+			<p><a href="http://bl.ocks.org/nbremer/21746a9668ffdf6d8242">Blocks</a></p>
+		  </div>
 
 
 
@@ -156,13 +168,13 @@
 						{axis:"Fugitive Emissions",value:0.052}			
 					  ]
 					  ,[//CH4
-						{axis:"Industrial Energy",value:0.01},
+						{axis:"Industrial Energy",value:0.00},
 						{axis:"Transport",value:0},
 						{axis:"Energy in Buildings",value:0},
 						{axis:"Other Energy",value:0},
-						{axis:"Agriculture",value:0.61},
+						{axis:"Agriculture",value:0.0},
 						{axis:"Waste",value:0},
-						{axis:"Fugitive Emissions",value:0.85}
+						{axis:"Fugitive Emissions",value:0.0}
 					  ]
 					];
 			////////////////////////////////////////////////////////////// 
