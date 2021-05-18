@@ -119,11 +119,11 @@ padding: 10px;
 <div id="my_legend"></div>
 
 <div class="writing">
-  <p> Now we understand the solution space ...</p>
-  <p> Can we get to net zero by 2030?</p>
+  <p> Now we understand what the solutions are ...</p>
+  <p> Can we get to zero carbon emissions?</p>
 </div>
 <div class="writing2">
-  <p> Drag Solutions to the solution space &#x1F449;</p>
+  <p> Drag Solutions to the solution space to reduce our emissions &#x1F449;</p>
 </div>
 
 <div class="footer">
@@ -136,7 +136,7 @@ padding: 10px;
 <p id="demo"></p>
 <script>
 
-var carbon = 33.1
+var carbon = 50
 var cost = 0
 
 
@@ -179,7 +179,7 @@ d3.csv("drawdown_solutions.csv", function(data) {
 
 
 
-    const f = d3.format(".4f");
+    const f = d3.format(".2f");
 
   // Three function that change the tooltip when user hover / move / leave a cell
   var mouseover = function(d) {
@@ -188,7 +188,7 @@ d3.csv("drawdown_solutions.csv", function(data) {
   }
   var mousemove = function(d) {
     Tooltip
-      .html('<u>' + d.key + '</u>' + "<br>" + f(d.value/30) + " Billion Tonnes Sequestered per year" + ", " + 'cost is: ' + d.price + ' billion per year')
+      .html('<u>' + d.key + '</u>' + "<br>" + f(d.value/30) + " Billion Tonnes Sequestered per year" + ", " + 'cost is: ' + f(d.price/30) + ' billion per year')
       .style("left", (d3.mouse(this)[0]+20) + "px")
       .style("top", (d3.mouse(this)[1]) + "px")
       .style("font-family", "Fira Sans")
@@ -270,53 +270,60 @@ var rectangle = svg.append("g").append("rect")
                     .attr("x", width - 400)
                     .attr("y", height - 570)
                     .attr("width", 500)
+                    .style("fill", "#87ceeb")
                     .attr("height", 400); 
 
 text = svg.append("g").append('text')
-  .text('Amount of Carbon:' + ' ' + carbon +  ' ' + 'Billion Tonnes')
+  .text('Global Carbon emitted per year:' + ' ' + carbon +  ' ' + 'Billion Tonnes')
   .attr('dy','0.35em')
   .attr('transform', 'translate(480,250)')
-  .attr("x",width - 780) 
-  .attr("y", height - 520)
-  .style("fill", "#fe9929")
+  .attr("x",width - 1100) 
+  .attr("y", height - 300)
+  .style("fill", "green")
   .style("font-family", "Fira Sans")
+  .style("font-size", 20)
 
-  text = svg.append('text')
+  text_2 = svg.append('text')
   .text('Cost: ' + ' ' + cost +  ' ' + 'billions of Dollars')
   .attr('dy','0.35em')
   .attr('transform', 'translate(480,250)')
-  .attr("x", width - 780) 
-  .attr("y", height - 500)
+  .attr("x", width - 1100) 
+  .attr("y", height - 280)
   .style("fill", "#fe9929")
   .style("font-family", "Fira Sans")
+  .style("font-size", 20)
 
 
   function update() {
       var t = d3.transition()
       .duration(750);
-      
-    var text = svg.select("g").selectAll("text")
     
-    text.exit().remove();
+    text?.remove();
+    text_2?.remove();
 
-   // text.enter().append("text")
-    text = svg.append('text')
-      .attr("class", "enter")
-      .text('Amount of Carbon:' + ' ' + carbon +  ' ' + 'Billion Tonnes')
-      .attr('dy','0.35em')
-      .attr('transform', 'translate(480,250)')
-      .attr("x",width - 780) 
-      .attr("y", height - 520)
-      .style("fill", "#fe9929")
-    .transition(t)
-  
-    text = svg.append('text')
-  .text('Cost: ' + ' ' + cost +  ' ' + 'billions of Dollars')
+    //text = svg.select("g").selectAll("text")
+    
+   //text.enter().append("text")
+   const p = d3.format(".1f");
+   text = svg.append("g").append('text')
+  .text('Global Carbon emitted per year:' + ' ' + p(carbon) +  ' ' + 'Billion Tonnes')
   .attr('dy','0.35em')
   .attr('transform', 'translate(480,250)')
-  .attr("x", width - 780) 
-  .attr("y", height - 500)
+  .attr("x",width - 1100) 
+  .attr("y", height - 300)
+  .style("fill", "green")
+  .style("font-family", "Fira Sans")
+  .style("font-size", 20)
+
+  text_2 = svg.append('text')
+  .text('Cost: ' + ' ' + p(cost) +  ' ' + 'billions of Dollars')
+  .attr('dy','0.35em')
+  .attr('transform', 'translate(480,250)')
+  .attr("x", width - 1100) 
+  .attr("y", height - 280)
   .style("fill", "#fe9929")
+  .style("font-family", "Fira Sans")
+  .style("font-size", 20)
     
     
       }
@@ -338,7 +345,7 @@ var size = d3.scaleSqrt()
   .range([7,55])  // Size in pixel
 
 // Add legend: circles
-var valuesToShow = [10, 50, 100]
+var valuesToShow = [15, 60, 120]
 var xCircle = 230
 var xLabel = 380
 var yCircle = 230
@@ -375,7 +382,7 @@ svg
     .attr('x', xLabel)
     .attr('y', function(d){ return yCircle - size(d) } )
     .text( "Gigatons")
-    .text( function(d){ return d } )
+    .text( function(d){ return (d/30) } )
     .style("font-size", 10)
     .style("font-family", "Fira Sans")
     .attr('alignment-baseline', 'middle')
@@ -461,7 +468,7 @@ svg.selectAll("mylabels")
     .attr("x1", (width -200))     // x position of the first end of the line
     .attr("y1", height - 130)      // y position of the first end of the line
     .attr("x2", (width -200))     // x position of the second end of the line
-    .attr("y2", height -180);    // y position of the second end of the line
+    .attr("y2", height -160);    // y position of the second end of the line
 
 </script>
 

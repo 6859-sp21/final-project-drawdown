@@ -1,10 +1,10 @@
 "price";"subregion";"key";"value"
 "98.16";"98.16";"Abandoned Farmland Restoration";12.48
-"Buildings";4.65;"Biogas for Cooking";49.04
-"Buildings";"Buildings";"Improved Clean Cookstoves";31.34
+"98.16";4.65;"Biogas for Cooking";49.04
+"98.16";"Buildings";"Improved Clean Cookstoves";31.34
 "0";"Ocean Sinks";"Coastal Wetland Restoration";0.77
 "1770";"1770";"LED Lighting";16.07
-"Electricity";"Electricity";"Water Distribution Efficiency";0.66;24.19
+"98.16";"Electricity";"Water Distribution Efficiency";0.66;24.19
 "566.38";"Electricity";"Concentrated Solar Power";18.60
 "479.59";"Electricity";"Distributed Solar Photovoltaics";27.98
 "290";"Electricity";"Utility-Scale Solar Photovoltaics";42.32

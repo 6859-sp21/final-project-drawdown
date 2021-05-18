@@ -1,125 +1,125 @@
 {
- "name": "Explore", "details": "solutions in each circle!",
+ "name": "All the solutions combined", "size": 200000, "details": "adds all the solutions together!",
  "children": [
   {
-   "name": "Electricity", "details": "Involves electricity",
+   "name": "Electricity", "size": 20000, "details": "combines all of the electricity solutions combined.",
    "children": [
-    {"name": "LED Lighting", "size": 1607, "details": "Involves new types of lightbulbs"},
-    {"name": "Water Distribution Efficiency", "size": 66},
-    {"name": "Concentrated Solar Power", "size": 1860},
-    {"name": "Distributed Solar Photovoltaics", "size": 2798},
-    {"name": "Utility-Scale Photovoltaics", "size": 4232},
-    {"name": "Micro Wind Turbines", "size": 9},
-    {"name": "Onshore Wind Turbines", "size": 4721},
-    {"name": "Offshore Wind Turbines", "size": 1044},
-    {"name": "Geothermal Power", "size": 619},
-    {"name": "Small Hydropower", "size": 169},
-    {"name": "Ocean Power", "size": 138},
-    {"name": "Biomass Power", "size": 252},
-    {"name": "Nuclear Power", "size": 265}
+    {"name": "LED Lighting", "size": 1607, "details": "Involves new energy-efficient types of lightbulbs."},
+    {"name": "Water Distribution Efficiency", "size": 66, "details": "Reduces leaks and water system inefficiencies reduces needs for power to pump water."},
+    {"name": "Concentrated Solar Power", "size": 1860, "details": "uses arrays of mirrors concentrate incoming rays onto a receiver, to heat fluid, produce steam, and turn turbines."},
+    {"name": "Distributed Solar Photovoltaics", "size": 2798, "details": "uses solar Panels on business or houses' rooftops provide local electricity through a network."},
+    {"name": "Utility-Scale Photovoltaics", "size": 4232, "details": "uses big Solar Power farms that are centralised, not distributed."},
+    {"name": "Micro Wind Turbines", "size": 9, "details": "uses big Solar Power farms that are centralised, not distributed."},
+    {"name": "Onshore Wind Turbines", "size": 4721, "details": "uses wind farms on land"},
+    {"name": "Offshore Wind Turbines", "size": 1044, "details": "uses wind farms in the ocean."},
+    {"name": "Geothermal Power", "size": 619, "details": "uses underground resevoirs of hot water heated by energy under the earth's crust."},
+    {"name": "Small Hydropower", "size": 169, "details": "Captures the energy offlowing water without a big dam."},
+    {"name": "Ocean Power", "size": 138, "details": "Uses the power of waves and tides."},
+    {"name": "Biomass Power", "size": 252, "details": "Grows plants and burn them."},
+    {"name": "Nuclear Power", "size": 265, "details": "Uses a nuclear reactor to generate electricity."}
    ]
   },
   {
-   "name": "Food & Agriculture",
+   "name": "Food & Agriculture","size": 24000, "details": "adds all the food & Agriculture solutions together!",
    "children": [
-    {"name": "Nutrient Management", "size": 234},
-    {"name": "Farm Irrigation Efficiency", "size": 113},
-    {"name": "Plant-Rich Diets", "size": 6501},
-    {"name": "Reduced Food Waste", "size": 8745},
-    {"name": "Forest Protection", "size": 552},
-    {"name": "Indigenous Peoples’ Forest Tenure", "size": 869},
-    {"name": "Grassland Protection", "size": 335},
-    {"name": "Peatland Protection and Rewetting", "size": 2603},
-    {"name": "Sustainable Intensification for Smallholders", "size": 136},
-    {"name": "Regenerative Annual Cropping", "size": 1452},
-    {"name": "Improved Rice Production", "size": 944},
-    {"name": "System of Rice Intensification", "size": 278},
-    {"name": "Conservation Agriculture", "size": 1340}
+    {"name": "Nutrient Management", "size": 234, "details": "ensures more efficient use of nitrogen fertilizer to reduce nitrous oxide and fertilizer production."},
+    {"name": "Farm Irrigation Efficiency", "size": 113, "details": "ensures more efficient irrigation to make sure farms reduce energy on pumping water."},
+    {"name": "Plant-Rich Diets", "size": 6501, "details": "Reduces eating dairy and meat products which reduces the amount of land clearing, fertilizer use and burping cattle."},
+    {"name": "Reduced Food Waste", "size": 8745, "details": "recognisies that a third of the world's food is never eaten.This can be reduced."},
+    {"name": "Forest Protection", "size": 552, "details": "ensures forests store carbon"},
+    {"name": "Indigenous Peoples’ Forest Tenure", "size": 869, "details": "ensures traditional practices can help turn areas into carbon sinks"},
+    {"name": "Grassland Protection", "size": 335, "details": "ensures grasslands hold stores of carbon and should be protected."},
+    {"name": "Peatland Protection and Rewetting", "size": 2603, "details": "ensures Peatlands are carbon sinks and should be protected."},
+    {"name": "Sustainable Intensification for Smallholders", "size": 136, "details": "uses intercropping and ecosystem pest management can reduce demand to clear land."},
+    {"name": "Regenerative Annual Cropping", "size": 1452, "details": "uses compost application, green manure and organic production. It reduces emissions and sequesters carbon."},
+    {"name": "Improved Rice Production", "size": 944, "details": "uses improved soil, nutrient management, water use, and tillage practices"},
+    {"name": "System of Rice Intensification", "size": 278 , "details": "uses a holistic approach to sustainable rice cultivation. By minimizing water use and alternating wet and dry conditions, it minimizes methane production and emissions."},
+    {"name": "Conservation Agriculture", "size": 1340, "details": "uses cover crops, crop rotation, and minimal tilling in the production of annual crops. It protects soil, avoids emissions, and sequesters carbon."}
    ]
   },
   {
-   "name": "Industry",
+   "name": "Industry","size": 12600, "details": "adds all the Industry solutions together!",
    "children": [
-    {"name": "Waste-to-Energy", "size": 204},
-    {"name": "Landfill Methane Capture", "size": 218},
-    {"name": "Alternative Cement", "size": 798},
-    {"name": "Bioplastics", "size": 96},
-    {"name": "Composting", "size": 214},
-    {"name": "Recycling", "size": 550},
-    {"name": "Recycled Paper", "size": 110},
-    {"name": "Refrigerant Management", "size": 5775},
-    {"name": "Alternative Refrigerants", "size": 4353},
-    {"name": "Methane Digesters", "size": 983}
+    {"name": "Waste-to-Energy", "size": 204, "details": "Burns waste and converts it to energy"},
+    {"name": "Landfill Methane Capture", "size": 218, "details": "Captures methane from landfills and converts to energy."},
+    {"name": "Alternative Cement", "size": 798, "details": "Changes the comoposition of cement can reduce the neeed to decarbonise limestone, which is very carbon-intensive."},
+    {"name": "Bioplastics", "size": 96, "details": "makes bioplastics from plants."},
+    {"name": "Composting", "size": 214, "details": "converts organic waste into soil carbon, averting landfill methane emissions in the process."},
+    {"name": "Recycling", "size": 550, "details": "makes old materials out of old ones, rather than making everything new."},
+    {"name": "Recycled Paper", "size": 110, "details": "converts old paper into new paper."},
+    {"name": "Refrigerant Management", "size": 5775, "details": "Reduces the number of Fluorinated gases that are leaked into the atmosphere."},
+    {"name": "Alternative Refrigerants", "size": 4353, "details": "Uses different refrigerants than Fluorinated gases, such as ammonia or captured CO2."},
+    {"name": "Methane Digesters", "size": 983, "details": "Controls the decomposition of organic so that it can be converted into fuel."}
    ]
   },
   {
-   "name": "Transport",
+   "name": "Transport","size": 5500, "details": "adds all the Transfort solutions together!",
    "children": [
-    {"name": "Walkable Cities", "size": 144},
-    {"name": "Bicycle Infrastructure", "size": 256},
-    {"name": "Electric Bicycles", "size": 131},
-    {"name": "Carpooling", "size": 770},
-    {"name": "Public Transit", "size": 751},
-    {"name": "High-Speed Rail", "size": 130},
-    {"name": "Telepresence", "size": 105},
-    {"name": "Hybrid Cars", "size": 789},
-    {"name": "Efficient Trucks", "size": 461},
-    {"name": "Electric Trains", "size": 10},
-    {"name": "Electric Cars", "size": 1187},
-    {"name": "Efficient Ocean Shipping", "size": 440},
-    {"name": "Efficient Aviation", "size": 627}
+    {"name": "Walkable Cities", "size": 144, "details": "plans cities to maximise walking and minimise driving, reducing emissions."},
+    {"name": "Bicycle Infrastructure", "size": 256, "details": "plans infrastructure to maximise bike use."},
+    {"name": "Electric Bicycles", "size": 131, "details": "Provides support for electric bike use."},
+    {"name": "Carpooling", "size": 770, "details": "Reduces the number of vehicles on the road."},
+    {"name": "Public Transit", "size": 751, "details": "Reduces the need for cars and therefore reduces emissions."},
+    {"name": "High-Speed Rail", "size": 130,"details": "reduces the need for long-distance car or plane journeys due to high speed transport."},
+    {"name": "Telepresence", "size": 105, "details": "Very good video conferencing technology could mean people don't have to travel on business trips."},
+    {"name": "Hybrid Cars", "size": 789, "details": "involves both a combustion engine and electric motor, so can be a transition vehicle."},
+    {"name": "Efficient Trucks", "size": 461, "details": "Retrofit current fleets of trucks or build new more efficient trucks to reduce emissions from vehicles."},
+    {"name": "Electric Trains", "size": 10, "details": "Remove diesel trains and replace them with cleaner electric trains."},
+    {"name": "Electric Cars", "size": 1187, "details": "EVs are always reduce emissions more than fossil fuel cars, but especially when powered by renewables."},
+    {"name": "Efficient Ocean Shipping", "size": 440, "details": "Fuel-saving ship design and onboard technologies to reduce shipping emissions."},
+    {"name": "Efficient Aviation", "size": 627, "details": "Better engines, wingtips and reducing weight can improve fuel efficiency."}
    ]
   },
   {
-   "name": "Buildings",
+   "name": "Buildings","size": 10000, "details": "adds all the Building solutions together!",
    "children": [
-    {"name": "Biogas for Cooking", "size": 465},
-    {"name": "Smart Thermostats", "size": 699},
-    {"name": "Building Automation Systems", "size": 1697},
-    {"name": "Dynamic Glass", "size": 29},
-    {"name": "High-Performance Glass", "size": 1004},
-    {"name": "Green and Cool Roofs", "size": 60},
-    {"name": "District Heating", "size": 628},
-    {"name": "High-Efficiency Heat Pumps", "size": 416},
-    {"name": "Solar Hot Water", "size": 359},
-    {"name": "Low-Flow Fixtures", "size": 91},
-    {"name": "Improved Clean Cookstoves", "size": 3134}
+    {"name": "Biogas for Cooking", "size": 465, "details": "replaces kerosene cookers with more efficient ones that reduce emissions."},
+    {"name": "Smart Thermostats", "size": 699, "details": "Uses algorithms to make heating spaces more efficient."},
+    {"name": "Building Automation Systems", "size": 1697, "details": "controls heating, cooling, lighting and applicances in commercial buildings to make the more efficient."},
+    {"name": "Dynamic Glass", "size": 29, "details": "responds to the light outside in order to reduce the building's need for heating or cooling."},
+    {"name": "High-Performance Glass", "size": 1004, "details": "improves window insulation, therefore making building heating and cooling more efficient."},
+    {"name": "Green and Cool Roofs", "size": 60, "details": "Uses soil and vegetation to insulate, or reflect sunlight in the case of cool roofs."},
+    {"name": "District Heating", "size": 628, "details": "centralises the heating of multiple buildings to make it more efficient."},
+    {"name": "High-Efficiency Heat Pumps", "size": 416, "details": "take heat from the air and transfer it (indoors out for cooling, or outdoors in for heating) to reduce energy use."},
+    {"name": "Solar Hot Water", "size": 359, "details": "Use sunlight to heat up water instead of wasting energy."},
+    {"name": "Low-Flow Fixtures", "size": 91, "details": "Uses more efficient home-appliance fixtures to reduce home water use and therefore energy use."},
+    {"name": "Improved Clean Cookstoves", "size": 3134, "details": "reduces pollution from burning wood or biomass in traditional stoves."}
    ]
   },
   {
-   "name": "Land Sinks",
+   "name": "Land Sinks","size": 20400, "details": "adds all the Land Sinks solutions together!",
    "children": [
-    {"name": "Temperate Forest Restoration", "size": 1942},
-    {"name": "Tropical Forest Restoration", "size": 5445},
-    {"name": "Managed Grazing", "size": 1642},
-    {"name": "Silvopasture", "size": 2658},
-    {"name": "Multistrata Agroforestry", "size": 1130},
-    {"name": "Tree Intercropping", "size": 1503},
-    {"name": "Perennial Staple Crops", "size": 1545},
-    {"name": "Perennial Biomass Production", "size": 400},
-    {"name": "Abandoned Farmland Restoration", "size": 1248},
-    {"name": "Tree Plantations (on Degraded Land)", "size": 2224},
-    {"name": "Bamboo Production", "size": 827}
+    {"name": "Temperate Forest Restoration", "size": 1942, "details": "restores forests so that they can sequester CO2."},
+    {"name": "Tropical Forest Restoration", "size": 5445, "details": "restores tropical forests so that they can sequester CO2."},
+    {"name": "Managed Grazing", "size": 1642, "details": "carefully controls grazing to reduce damage to grasslands, which sequester CO2."},
+    {"name": "Silvopasture", "size": 2658, "details": "intersperses forest and livestock farming which improves carbon sequestration."},
+    {"name": "Multistrata Agroforestry", "size": 1130, "details": "uses farming to mimic forests by having layers of crops and trees to achieve high levels of co2 sequestration."},
+    {"name": "Tree Intercropping", "size": 1503, "details": "Grow trees and annual crops together os that they can all increase biomass, organic matter and carbon sequestration."},
+    {"name": "Perennial Staple Crops", "size": 1545, "details": "provides important foods, such as bananas, avocado, and breadfruit. Compared to annual crops, they have similar yields but higher rates of carbon sequestration."},
+    {"name": "Perennial Biomass Production", "size": 400, "details": "Grows crops for biomass production, which are a more sustainable way to sequester soil carbon."},
+    {"name": "Abandoned Farmland Restoration", "size": 1248, "details": "uses farmland that has been abandoned because it is degraded and restores it to be productive again."},
+    {"name": "Tree Plantations (on Degraded Land)", "size": 2224, "details": "plants trees in degraded land."},
+    {"name": "Bamboo Production", "size": 827, "details": "plants bamboo in degraded lands, which provides biomass and can sequester carbon."}
    ]
   },
   {
-   "name": "Ocean Sinks",
+   "name": "Ocean Sinks","size": 176, "details": "adds all the Ocean Sinks solutions together!",
    "children": [
-    {"name": "Coastal Wetland Protection", "size": 99},
-    {"name": "Coastal Wetland Restoration", "size": 77}
+    {"name": "Coastal Wetland Protection", "size": 99, "details": "restores mangrove forests, salt marshes, and seagrass beds to health revives carbon sequestration."},
+    {"name": "Coastal Wetland Restoration", "size": 77, "details": "protects mangrove forests, salt marshes, and seagrass beds to health revives carbon sequestration."}
    ]
   },
 
   {
-    "name": "Health & Education",
+    "name": "Health & Education", "size": 8542, "details": "adds all the health & Education solutions together!",
     "children": [
-     {"name": "Health & Education", "size": 8542}
+     {"name": "Health & Education", "size": 8542, "details": "improves health, environmental stewardship and has shown to result in more family planning"}
     ]
    },
   {
-   "name": "Engineered Sinks",
+   "name": "Engineered Sinks", "size": 22, "details": "adds all the Engineered Sinks solutions together!",
    "children": [
-    {"name": "Biochar Production", "size": 222}
+    {"name": "Biochar Production", "size": 222, "details": "slowly bakes biomass without oxygen, which keeps most of the carbon in tact and then can be buried to enrich soil."}
    ]
   }
  ]

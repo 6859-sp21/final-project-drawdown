@@ -28,11 +28,34 @@ a {
   font-weight: bold;
 }
 
+.svg_2-container{
+  display: flex;   justify-content: center;
+  }
+
+
 .svg-container{
   display: flex;   justify-content: center;
   }
 
   .svg-style {
+        background-color: #87ceeb;
+        display: block;
+        margin: auto;
+           }
+
+           .header {
+            padding-top: 25px;
+  padding-bottom: 0px;
+  text-align: center;
+  background:#87ceeb;
+  color:#120a8f;
+  font-size: 30px;
+  font-family: Fira Sans;
+  font-weight: 700;
+
+}
+
+.svg_2-style {
         background-color: #87ceeb;
         display: block;
         margin: auto;
@@ -165,6 +188,7 @@ width:32%;
   <p>Let's search the solution space &#x1F447; </p>
 </div>
 
+
 <div class="svg-container">
   <svg width="960" height="960"></svg>
 </div>
@@ -184,6 +208,76 @@ width:32%;
 
 <script src="https://d3js.org/d3.v4.min.js"></script>
 <script>
+
+var height = 860
+var width = 860
+var svg_2 = d3.select('body')
+  .append("svg")
+    .attr("width", width)
+    .attr("height", height)
+
+// The scale you use for bubble size
+var size = d3.scaleSqrt()
+  .domain([1, 100])  // What's in the data, let's say it is percentage
+  .range([7,55])  // Size in pixel
+
+// Add legend: circles
+var valuesToShow = [15, 60, 120]
+var xCircle = 230 - 200
+var xLabel = 380 - 200
+var yCircle = 20
+svg_2
+  .selectAll("legend")
+  .data(valuesToShow)
+  .enter()
+  .append("circle")
+    .attr("cx", xCircle)
+    .attr("cy", function(d){ return yCircle - size(d) } )
+    .attr("r", function(d){ return size(d) })
+    .style("fill", "none")
+    .attr("stroke", "black")
+
+// Add legend: segments
+svg_2
+  .selectAll("legend")
+  .data(valuesToShow)
+  .enter()
+  .append("line")
+    .attr('x1', function(d){ return xCircle + size(d) } )
+    .attr('x2', xLabel)
+    .attr('y1', function(d){ return yCircle - size(d) } )
+    .attr('y2', function(d){ return yCircle - size(d) } )
+    .attr('stroke', 'black')
+    .style('stroke-dasharray', ('2,2'))
+
+// Add legend: labels
+svg_2
+  .selectAll("legend")
+  .data(valuesToShow)
+  .enter()
+  .append("text")
+    .attr('x', xLabel)
+    .attr('y', function(d){ return yCircle - size(d) } )
+    .text( "Gigatons")
+    .text( function(d){ return (d/30) } )
+    .style("font-size", 10)
+    .style("font-family", "Fira Sans")
+    .attr('alignment-baseline', 'middle')
+
+    svg_2
+  .selectAll("legend")
+  .data(valuesToShow)
+  .enter()
+  .append("text")
+    .attr('x', xLabel -20)
+    .attr('y', function(d){ return yCircle - size(d) + 9})
+    .text( "GHGs Sequestered (Bn tonnes)")
+    .style("font-size", 8)
+    .style("font-family", "Fira Sans")
+    .attr('alignment-baseline', 'middle')
+
+
+    // End of Legend
 
 var svg = d3.select("svg"),
     margin = 20,
@@ -232,7 +326,7 @@ d3.json("Scenario_1.json", function(error, root) {
       .attr("class", function(d) { return d.parent ? d.children ? "node" : "node node--leaf" : "node node--root"; })
       .style("fill", function(d) { return d.children ? color(d.depth) : null; })
       .on("click", function(d) { if (focus !== d) zoom(d), d3.event.stopPropagation(); })
-	  .on("mouseover", function(d){return tooltip.text(d.data.name + ' could sequester' + ' ' + f((d.data.size/100)/30) + ' billion tonnes of GHGs per year. This solution involves ' + d.data.details).style("visibility", "visible");})
+	  .on("mouseover", function(d){return tooltip.text(d.data.name + ' could sequester' + ' ' + f((d.data.size/100)/30) + ' billion tonnes of GHGs per year. This solution ' + d.data.details).style("visibility", "visible");})
 	.on("mousemove", function(){return tooltip.style("top", (event.pageY-10)+"px").style("left",(event.pageX+10)+"px");})
 	.on("mouseout", function(){return tooltip.style("visibility", "hidden");});
 
@@ -406,5 +500,7 @@ function generateQuiz(questions, quizContainer, resultsContainer, submitButton){
   }
 
 }
+
+
 
 </script>
