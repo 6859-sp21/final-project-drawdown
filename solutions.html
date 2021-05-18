@@ -71,7 +71,7 @@ padding: 10px;
   color:white; 
   border: 2px solid #4CAF50;
   left: 85%;
-  top: 95%;
+  top: 97%;
 }
 
 .button1 {
@@ -79,7 +79,7 @@ padding: 10px;
   color:white; 
   border: 2px solid #4CAF50;
   left: 15%;
-  top: 95%;
+  top: 97%;
 }
 
 
@@ -130,7 +130,7 @@ padding: 10px;
   <button class="button button1"><a href="circle_pack_tooltip.html">Back</a></button>
   <button class="button button2"><a href="endpage.html">End</a></button>
   <p><a href="https://drawdown.org/solutions/table-of-solutions">Drawdown Data</a></p> 
-  <p><a href="http://bl.ocks.org/denisemauldin/cb870e6f439864a5ae74d4fc561ac46f">Blocks</a></p>
+  <p><a href="https://www.d3-graph-gallery.com/graph/circularpacking_drag.html">Code Used in Design</a></p>
 </div>
 
 <p id="demo"></p>
@@ -188,7 +188,7 @@ d3.csv("drawdown_solutions.csv", function(data) {
   }
   var mousemove = function(d) {
     Tooltip
-      .html('<u>' + d.key + '</u>' + "<br>" + f(d.value/30) + " Billion Tonnes Sequestered per year" + ", " + 'cost is: ' + f(d.price/30) + ' billion per year')
+      .html('<u>' + d.key + '</u>' + "<br>" + f(d.value/30) + " Billion Tonnes Sequestered per year" + ";  " + 'cost estimate: ' + f(d.price/30) + ' billion per year')
       .style("left", (d3.mouse(this)[0]+20) + "px")
       .style("top", (d3.mouse(this)[1]) + "px")
       .style("font-family", "Fira Sans")

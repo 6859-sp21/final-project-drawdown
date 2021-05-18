@@ -134,6 +134,20 @@ width:32%;
   position: fixed;
   font-family: Fira Sans;
 }
+.image {
+  margin: 0;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  margin: 0;
+  top: 19%;
+  left: 15%;
+  position: absolute;
+  font-family: Fira Sans;
+}
+
 .button2 {
   background-color:grey ; 
   color:white; 
@@ -178,6 +192,76 @@ width:32%;
 }
 
 
+.tooltip {
+  position: absolute;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  margin: 0;
+  font-family: Fira Sans;
+  left: 8%;
+  top: 35%;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  border-radius: 4px;
+  position: absolute;
+ 
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 4;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  margin: 10;
+  font-family: Fira Sans;
+  left: 140%;
+  top: 80%;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+.tooltip2 {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  margin: 0;
+  position: absolute;
+  font-family: Fira Sans;
+  left: 8%;
+  top: 40%;
+}
+
+.tooltip2 .tooltip2text {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+}
+
+.tooltip2:hover .tooltip2text {
+  visibility: visible;
+}
+
 </style>
 
 <div class="header">
@@ -185,12 +269,20 @@ width:32%;
 </div>
 <div class="writing">
   <p>Remember, we emit 50 billion tonnes of Greenhouse Gases per year globally.</p>
-  <p>Let's search the solution space &#x1F447; </p>
+  <p>Hover to search the solution space &#x1F447; </p>
 </div>
 
-
+<img src="image_1.png" alt="legend" style="width:250px;height:110px;" class="image">
 <div class="svg-container">
   <svg width="960" height="960"></svg>
+</div>
+
+<div class="tooltip">What is Sequestering?
+  <span class="tooltiptext">This is when you suck Greenhouse Gases out of the atmosphere.</span>
+</div>
+
+<div class="tooltip2">Where do these <br> solutions come from?
+  <span class="tooltip2text">These solutions are based on analysis by 'Drawdown'. See link below.</span>
 </div>
 
 <div class="footer">
@@ -200,8 +292,8 @@ width:32%;
   <div id="quiz"></div>
   <button id="submit">Get Results</button>
   <div id="results"></div>
-  <p><a href="https://www.ipcc-data.org/sim/gcm_clim/SRES_TAR/ddc_sres_emissions.html">IPCC Data</a></p> 
-  <p><a href="http://bl.ocks.org/denisemauldin/cb870e6f439864a5ae74d4fc561ac46f">Blocks</a></p>
+  <p><a href="https://drawdown.org/solutions/table-of-solutions">Drawdown Data</a></p> 
+  <p><a href="https://observablehq.com/@d3/zoomable-circle-packing">Code </a><a href="https://bl.ocks.org/mashehu/5a782e5dd3814956c97469101e7f75b3">used </a>in design</p>
 </div>
 
 <div id="my_legend"></div>
@@ -209,75 +301,75 @@ width:32%;
 <script src="https://d3js.org/d3.v4.min.js"></script>
 <script>
 
-var height = 860
-var width = 860
-var svg_2 = d3.select('body')
-  .append("svg")
-    .attr("width", width)
-    .attr("height", height)
+// var height = 860
+// var width = 860
+// var svg_2 = d3.select('body')
+//   .append("svg")
+//     .attr("width", width)
+//     .attr("height", height)
 
-// The scale you use for bubble size
-var size = d3.scaleSqrt()
-  .domain([1, 100])  // What's in the data, let's say it is percentage
-  .range([7,55])  // Size in pixel
+// // The scale you use for bubble size
+// var size = d3.scaleSqrt()
+//   .domain([1, 150])  // What's in the data, let's say it is percentage
+//   .range([7,55])  // Size in pixel
 
-// Add legend: circles
-var valuesToShow = [15, 60, 120]
-var xCircle = 230 - 200
-var xLabel = 380 - 200
-var yCircle = 20
-svg_2
-  .selectAll("legend")
-  .data(valuesToShow)
-  .enter()
-  .append("circle")
-    .attr("cx", xCircle)
-    .attr("cy", function(d){ return yCircle - size(d) } )
-    .attr("r", function(d){ return size(d) })
-    .style("fill", "none")
-    .attr("stroke", "black")
+// // Add legend: circles
+// var valuesToShow = [10, 50, 100]
+// var xCircle = 230 - 150
+// var xLabel = 380 - 200
+// var yCircle = 140
+// svg_2
+//   .selectAll("legend")
+//   .data(valuesToShow)
+//   .enter()
+//   .append("circle")
+//     .attr("cx", xCircle)
+//     .attr("cy", function(d){ return yCircle - size(d) } )
+//     .attr("r", function(d){ return size(d) })
+//     .style("fill", "none")
+//     .attr("stroke", "black")
 
-// Add legend: segments
-svg_2
-  .selectAll("legend")
-  .data(valuesToShow)
-  .enter()
-  .append("line")
-    .attr('x1', function(d){ return xCircle + size(d) } )
-    .attr('x2', xLabel)
-    .attr('y1', function(d){ return yCircle - size(d) } )
-    .attr('y2', function(d){ return yCircle - size(d) } )
-    .attr('stroke', 'black')
-    .style('stroke-dasharray', ('2,2'))
+// // Add legend: segments
+// svg_2
+//   .selectAll("legend")
+//   .data(valuesToShow)
+//   .enter()
+//   .append("line")
+//     .attr('x1', function(d){ return xCircle + size(d) } )
+//     .attr('x2', xLabel)
+//     .attr('y1', function(d){ return yCircle - size(d) } )
+//     .attr('y2', function(d){ return yCircle - size(d) } )
+//     .attr('stroke', 'black')
+//     .style('stroke-dasharray', ('2,2'))
 
-// Add legend: labels
-svg_2
-  .selectAll("legend")
-  .data(valuesToShow)
-  .enter()
-  .append("text")
-    .attr('x', xLabel)
-    .attr('y', function(d){ return yCircle - size(d) } )
-    .text( "Gigatons")
-    .text( function(d){ return (d/30) } )
-    .style("font-size", 10)
-    .style("font-family", "Fira Sans")
-    .attr('alignment-baseline', 'middle')
+// // Add legend: labels
+// svg_2
+//   .selectAll("legend")
+//   .data(valuesToShow)
+//   .enter()
+//   .append("text")
+//     .attr('x', xLabel)
+//     .attr('y', function(d){ return yCircle - size(d) } )
+//     .text( "Gigatons")
+//     .text( function(d){ return (d/100) } )
+//     .style("font-size", 8)
+//     .style("font-family", "Fira Sans")
+//     .attr('alignment-baseline', 'middle')
 
-    svg_2
-  .selectAll("legend")
-  .data(valuesToShow)
-  .enter()
-  .append("text")
-    .attr('x', xLabel -20)
-    .attr('y', function(d){ return yCircle - size(d) + 9})
-    .text( "GHGs Sequestered (Bn tonnes)")
-    .style("font-size", 8)
-    .style("font-family", "Fira Sans")
-    .attr('alignment-baseline', 'middle')
+//     svg_2
+//   .selectAll("legend")
+//   .data(valuesToShow)
+//   .enter()
+//   .append("text")
+//     .attr('x', xLabel -40)
+//     .attr('y', function(d){ return yCircle - size(d) + 50})
+//     .text( "GHGs Sequestered (Bn tonnes)")
+//     .style("font-size", 8)
+//     .style("font-family", "Fira Sans")
+//     .attr('alignment-baseline', 'middle')
 
 
-    // End of Legend
+//     // End of Legend
 
 var svg = d3.select("svg"),
     margin = 20,
@@ -302,7 +394,7 @@ var tooltip = d3.select("body")
     .style("border-width", "1px")
     .style("border-radius", "5px")
     .style("padding", "10px")
-    .style("font-size", "11px")
+    .style("font-size", "20px")
     .style("font-family", "Fira Sans")
 
   
