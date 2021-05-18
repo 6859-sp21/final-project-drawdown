@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/ >
+		<title>Causes Radar</title>
+
+		<!-- Google fonts -->
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300" rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+
+		<!-- D3.js -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link rel="stylesheet" href="style2.css">
+<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Roboto:400' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@500&family=Lato:wght@300;900&family=Rubik:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Aldrich|Arima+Madurai|Arvo|Henny+Penny|Indie+Flower|Libre+Baskerville|Pirata+One|Poiret+One|Sancreek|Satisfy|Share+Tech+Mono|Smokum|Snowburst+One|Special+Elite" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Della Respira' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet"> 
+		<style>
+			body {
+				font-family: 'Open Sans', sans-serif;
+				font-size: 11px;
+				font-weight: 300;
+				fill: #242424;
+				text-align: center;
+				text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, -1px 0 0 #fff, 0 -1px 0 #fff;
+				cursor: default;
+			}
+			
+			.legend {
+				font-family: 'Raleway', sans-serif;
+				fill: #333333;
+			}
+			
+			.tooltip {
+				fill: #333333;
+			}
+
+			.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.button1 {
+  background-color:white ; 
+  color:white; 
+  border: 2px solid #4CAF50;
+}
+
+.button2 {
+  background-color:white ; 
+  color:white; 
+  border: 2px solid #4CAF50;
+}
+
+.button1:hover {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.button2:hover {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.right {
+  margin: 0;
+  position: absolute;
+  top: 10%;
+  left: 15%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.left {
+  margin: 0;
+  position: absolute;
+  top: 10%;
+  left: 85%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.header {
+  padding: 60px;
+  text-align: center;
+  background:lightblue;;
+  color:#120a8f;
+  font-size: 30px;
+  font-family: Arvo;
+  font-weight: 700;
+
+}
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: black;
+  text-align: center;
+  font-family: Arvo;
+}
+
+
+		</style>
+	
+	</head>
+	<body>
+
+		<div class="right">
+			<button class="button button1"><a href="new_animation2.html">Back</a></button>
+		  </div>
+		  <div class="left">
+			<button class="button button2"><a href="map_effects.html">Next</a></button>
+		  </div>
+
+		  <div class="header">
+			<p>Causes: Where is the CO2 coming from?</p>
+		  </div>
+
+
+		<div class="radarChart"></div>
+		<div class="footer">
+			<p><a href="https://ourworldindata.org/emissions-by-sector">Source: Our World in Data</a></p> 
+			<p><a href="http://bl.ocks.org/nbremer/21746a9668ffdf6d8242">Blocks</a></p>
+		  </div>
+
+
+
+		<script src="radarChart.js"></script>	
+		<script>
+      
+      /* Radar chart design created by Nadieh Bremer - VisualCinnamon.com */
+      
+			////////////////////////////////////////////////////////////// 
+			//////////////////////// Set-Up ////////////////////////////// 
+			////////////////////////////////////////////////////////////// 
+
+			var margin = {top: 100, right: 100, bottom: 100, left: 100},
+				width = Math.min(700, window.innerWidth - 10) - margin.left - margin.right,
+				height = Math.min(width, window.innerHeight - margin.top - margin.bottom - 20);
+					
+			////////////////////////////////////////////////////////////// 
+			////////////////////////// Data ////////////////////////////// 
+			////////////////////////////////////////////////////////////// 
+
+			var data = [
+					  [//CO2 Emissions
+						{axis:"Industrial Energy",value:0.242},
+						{axis:"Transport",value:0.162},
+						{axis:"Energy in Buildings",value:0.175},
+						{axis:"Other Energy",value:0.153},
+						{axis:"Agriculture",value:0.184},
+						{axis:"Waste",value:0.032},
+						{axis:"Fugitive Emissions",value:0.052}			
+					  ]
+					  ,[//CH4
+						{axis:"Industrial Energy",value:0.00},
+						{axis:"Transport",value:0},
+						{axis:"Energy in Buildings",value:0},
+						{axis:"Other Energy",value:0},
+						{axis:"Agriculture",value:0.0},
+						{axis:"Waste",value:0},
+						{axis:"Fugitive Emissions",value:0.0}
+					  ]
+					];
+			////////////////////////////////////////////////////////////// 
+			//////////////////// Draw the Chart ////////////////////////// 
+			////////////////////////////////////////////////////////////// 
+
+			var color = d3.scale.ordinal()
+				.range(["#EDC951","#CC333F","#00A0B0"]);
+				
+			var radarChartOptions = {
+			  w: width,
+			  h: height,
+			  margin: margin,
+			  maxValue: 0.5,
+			  levels: 5,
+			  roundStrokes: true,
+			  color: color
+			};
+			//Call function to draw the Radar chart
+			RadarChart(".radarChart", data, radarChartOptions);
+
+
+			
+		</script>
+	</body>
+</html>

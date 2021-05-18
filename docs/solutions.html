@@ -38,7 +38,7 @@ padding: 10px;
     font-weight: 500;
     position: absolute;
 left: 50%;
-top: 20%;
+top: 17%;
 transform: translate(-50%, -50%);
 padding: 10px;
 
@@ -48,7 +48,73 @@ padding: 10px;
   opacity: 1 !important;
 }
 
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  margin: 0;
+  position: fixed;
+  font-family: Fira Sans;
+}
+.button2 {
+  background-color:grey ; 
+  color:white; 
+  border: 2px solid #4CAF50;
+  left: 85%;
+  top: 95%;
+}
+
+.button1 {
+  background-color:grey; 
+  color:white; 
+  border: 2px solid #4CAF50;
+  left: 15%;
+  top: 95%;
+}
+
+
+.button1:hover {
+  background-color: #4CAF50;
+  color: white;
+  left: 15%;
+}
+
+.button2:hover {
+  background-color: #4CAF50;
+  color: white;
+  left: 85%;
+}
+
+.footer {
+  position: absolute;
+  clear: both;
+  left: 0;
+  top: 95%;
+  width: 100%;
+  color: white;
+  text-align: center;
+  font-family: Fira Sans;
+  height: 900 px;
+  background-color: black;
+  
+}
+
 </style>
+
+
+<div>
+  <svg id="my_dataviz2" height=300 width=450></svg>
+</div>
 
 <div id="my_legend"></div>
 
@@ -57,8 +123,14 @@ padding: 10px;
   <p> Can we get to net zero by 2030?</p>
 </div>
 <div class="writing2">
-  <p> Drag Solutions to the solution space</p>
-  <p>  &#x1F44A; </p>
+  <p> Drag Solutions to the solution space &#x1F449;</p>
+</div>
+
+<div class="footer">
+  <button class="button button1"><a href="circle_pack_tooltip.html">Back</a></button>
+  <button class="button button2"><a href="endpage.html">End</a></button>
+  <p><a href="https://drawdown.org/solutions/table-of-solutions">Drawdown Data</a></p> 
+  <p><a href="http://bl.ocks.org/denisemauldin/cb870e6f439864a5ae74d4fc561ac46f">Blocks</a></p>
 </div>
 
 <p id="demo"></p>
@@ -67,8 +139,6 @@ padding: 10px;
 var carbon = 33.1
 var cost = 0
 
-document.getElementById("demo").innerHTML = carbon;
-document.write(carbon);
 
 // set the dimensions and margins of the graph
 var width = 1200
@@ -118,9 +188,11 @@ d3.csv("drawdown_solutions.csv", function(data) {
   }
   var mousemove = function(d) {
     Tooltip
-      .html('<u>' + d.key + '</u>' + "<br>" + f(d.value/30) + " Billion Tonnes Sequestered per year" + ", " + d.price)
+      .html('<u>' + d.key + '</u>' + "<br>" + f(d.value/30) + " Billion Tonnes Sequestered per year" + ", " + 'cost is: ' + d.price + ' billion per year')
       .style("left", (d3.mouse(this)[0]+20) + "px")
       .style("top", (d3.mouse(this)[1]) + "px")
+      .style("font-family", "Fira Sans")
+
   }
   var mouseleave = function(d) {
     Tooltip
@@ -137,7 +209,7 @@ d3.csv("drawdown_solutions.csv", function(data) {
       .attr("r", function(d){ return size(d.value)})
       .attr("cx", width/2)
       .attr("cy", height / 2)
-      .style("fill", function(d){ return color( d.price)})
+      .style("fill", function(d){ return color( d.subregion)})
       .style("fill-opacity", 0.8)
       .attr("stroke", "black")
       .style("stroke-width", 1)
@@ -196,7 +268,7 @@ d3.csv("drawdown_solutions.csv", function(data) {
 
 var rectangle = svg.append("g").append("rect")
                     .attr("x", width - 400)
-                    .attr("y", height - 600)
+                    .attr("y", height - 570)
                     .attr("width", 500)
                     .attr("height", 400); 
 
@@ -207,6 +279,7 @@ text = svg.append("g").append('text')
   .attr("x",width - 780) 
   .attr("y", height - 520)
   .style("fill", "#fe9929")
+  .style("font-family", "Fira Sans")
 
   text = svg.append('text')
   .text('Cost: ' + ' ' + cost +  ' ' + 'billions of Dollars')
@@ -215,6 +288,7 @@ text = svg.append("g").append('text')
   .attr("x", width - 780) 
   .attr("y", height - 500)
   .style("fill", "#fe9929")
+  .style("font-family", "Fira Sans")
 
 
   function update() {
@@ -257,7 +331,6 @@ text = svg.append("g").append('text')
 
  d3.select("rect")
       .on("mouseover", update);
-document.write(carbon);
 
 // The scale you use for bubble size
 var size = d3.scaleSqrt()
@@ -318,6 +391,77 @@ svg
     .style("font-size", 8)
     .style("font-family", "Fira Sans")
     .attr('alignment-baseline', 'middle')
+
+
+
+// create a list of keys
+var keys = ["Transportation", "Buildings", "Land Sinks", "Industry", "Health and Education", "Food & Agriculture", "Engineered Sinks", "Electricity", "Coastal Sinks"]
+
+// Usually you have a color scale in your chart already
+var color = d3.scaleOrdinal()
+  .domain(keys)
+  .range(d3.schemeSet1);
+
+// Add one dot in the legend for each name.
+svg.selectAll("mydots")
+  .data(keys)
+  .enter()
+  .append("circle")
+    .attr("cx", 200)
+    .attr("cy", function(d,i){ return 280 + i*25}) // 100 is where the first dot appears. 25 is the distance between dots
+    .attr("r", 7)
+    .style("fill", function(d){ return color(d)})
+
+// Add one dot in the legend for each name.
+svg.selectAll("mylabels")
+  .data(keys)
+  .enter()
+  .append("text")
+    .attr("x", 220)
+    .attr("y", function(d,i){ return 280 + i*25}) // 100 is where the first dot appears. 25 is the distance between dots
+    .style("fill", "black")
+    .style("font-family", "Fira Sans")
+    .text(function(d){ return d})
+    .attr("text-anchor", "left")
+    .style("alignment-baseline", "middle")
+
+
+    svg.append("text")
+        .attr("x", (width -600))             
+        .attr("y", height -110)
+        .attr("dy", "0em")
+        .attr("text-anchor", "middle")  
+        .style("font-size", "10px")
+        .style("fill", "grey")
+        .attr("font-family", "Fira Sans")
+        .text("Solutions")
+        .style("font-size", "20px");
+
+        svg.append("line")          // attach a line
+    .style("stroke", "black")  // colour the line
+    .attr("x1", (width -600))     // x position of the first end of the line
+    .attr("y1", height - 130)      // y position of the first end of the line
+    .attr("x2", (width -600))     // x position of the second end of the line
+    .attr("y2", height -200);    // y position of the second end of the line
+
+
+    svg.append("text")
+        .attr("x", (width -200))             
+        .attr("y", height -110)
+        .attr("dy", "0em")
+        .attr("text-anchor", "middle")  
+        .style("font-size", "10px")
+        .style("fill", "grey")
+        .attr("font-family", "Fira Sans")
+        .text("Solution Space")
+        .style("font-size", "20px");
+
+        svg.append("line")          // attach a line
+    .style("stroke", "black")  // colour the line
+    .attr("x1", (width -200))     // x position of the first end of the line
+    .attr("y1", height - 130)      // y position of the first end of the line
+    .attr("x2", (width -200))     // x position of the second end of the line
+    .attr("y2", height -180);    // y position of the second end of the line
 
 </script>
 
