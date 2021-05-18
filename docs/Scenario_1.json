@@ -1,8 +1,8 @@
 {
- "name": "Explore", "details": "solutions in each circle!",
+ "name": "All of these solutions together", "size":80000,  "details": "putting all the solutions together! Might be a big job!",
  "children": [
   {
-   "name": "Electricity", "details": "Involves electricity",
+   "name": "Electricity", "size": 16007, "details": "Involves using more electricity, compared to burning fuels.",
    "children": [
     {"name": "LED Lighting", "size": 1607, "details": "Involves new types of lightbulbs"},
     {"name": "Water Distribution Efficiency", "size": 66},
