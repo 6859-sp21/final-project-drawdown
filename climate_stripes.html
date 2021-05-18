@@ -1,0 +1,233 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <!-- Load bootstrap -->
+<link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=B612:wght@700&family=Fira+Sans:wght@500;900&family=Karla:wght@500&family=Oxygen:wght@700&display=swap" rel="stylesheet">
+</head>
+<style>
+    .itemgroup:hover rect {
+        opacity: 0;
+    }
+    .label {        
+        font-family: sans-serif;
+        font-size: 12px;
+        cursor: default;
+        fill: yellow;
+        background-color: khaki;
+        text-align: center;
+        vertical-align: text-top;
+    }
+    .source {
+        fill: #7a7a7a;
+        font-size: 10px;
+    }
+    .title {
+        font-weight: 700;
+    }
+    .itemgroup .label {
+        opacity: 0;
+    }
+    .itemgroup:hover .label {
+        opacity: 1;
+    }
+    .temgroup {
+        fill: white;
+    }
+    .chart .domain,
+    .chart .tick line {
+        display: none;
+        fill: red;
+    }
+    #yearly {
+        position: absolute;
+left: 37%;
+top: 50%;
+width: 1020;
+transform: translate(-50%, -50%);
+padding: 10px;
+    }
+    body {background-color: grey;}
+
+    .axis {
+        fill: white;
+    }
+
+    .writing {
+    color: white;
+    position: fixed;
+    top: 1%;
+    width:100%;
+    text-align: center;
+    font-family: Fira Sans;
+    font-size: 25px;
+    font-weight: 500;
+
+}
+
+.writing2 {
+    color: white;
+    position: fixed;
+    top: 83%;
+    width:100%;
+    text-align: center;
+    font-family: Fira Sans;
+    font-size: 30px;
+    font-weight: 500;
+
+}
+
+.writing3 {
+    color: white;
+    position: fixed;
+    top: 10%;
+    width:100%;
+    text-align: center;
+    font-family: Fira Sans;
+    font-size: 15px;
+    font-weight: 500;
+
+}
+
+.writing4 {
+    color: black;
+    position: fixed;
+    top: 82%;
+    width:100%;
+    text-align: left;
+    font-family: Fira Sans;
+    font-size: 15px;
+    font-weight: 500;
+    left: 4%;
+
+}
+
+.footer {
+    position: fixed;
+  clear: both;
+  left: 0;
+  top: 91%;
+  width: 100%;
+  color: white;
+  text-align: center;
+  font-family: Fira Sans;
+  height: 200 px;
+  background-color: black;
+}
+
+.right {
+  margin: 0;
+  position: fixed;
+  left: 15%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.left {
+  margin: 0;
+  position: fixed;
+  left: 85%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  margin: 0;
+  position: fixed;
+}
+.button2 {
+  background-color:white ; 
+  color:white; 
+  border: 2px solid #4CAF50;
+  left: 85%;
+  top: 95%;
+}
+
+.button1 {
+  background-color:white ; 
+  color:white; 
+  border: 2px solid #4CAF50;
+  left: 15%;
+  top: 95%;
+}
+
+
+.button1:hover {
+  background-color: #4CAF50;
+  color: white;
+  left: 15%;
+}
+
+.button2:hover {
+  background-color: #4CAF50;
+  color: white;
+  left: 85%;
+}
+
+
+</style>
+<body>
+    
+    <div class="writing">
+        <p>The world is heating ... but by how much? </p>
+      </div>
+
+      <div class="writing3">
+        <p> Scroll for Average global temperatures &#x1F449; </p>
+      </div>
+
+      <div class="writing4">
+        <p>Global Temperature over the past 100 years (Degrees C) </p>
+      </div>
+      
+    <div id="yearly"></div>
+    <div class="writing2">
+        <p> ... and what colour will our stripes be by 2030? </p>
+      </div>
+
+      <div class="footer">
+        <button class="button button1"><a href="intro.html">Back</a></button>
+        <button class="button button2"><a href="you_draw_it.html">Next</a></button>
+        <p><a href="https://data.giss.nasa.gov/gistemp/#tabledata">NASA Data (GSTEMP v4)</a></p> 
+        <p><a href="https://bl.ocks.org/Saigesp/eda813560c801474904004d6b6b1cc4c">Blocks</a></p>
+      </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.13.0/d3.min.js"></script>
+    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+    <script src="d3.stripelines.js"></script>
+    <script>
+    var scsv = d3.dsvFormat(";");
+
+    d3.text('global_temps_semi_colon.csv', function(data) {
+
+        var graph = new StripeLines(d3.select('#yearly'), scsv.parse(data), {
+            'key': 'yearly',
+            'label': 'year',
+            'legendRanges': [16,15,14,13],
+            'title': '',
+            'source': 'Source: NASA'
+        })
+
+    })
+
+
+    </script>
+</body>
+
+
+</html>

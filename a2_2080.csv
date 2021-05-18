@@ -1,0 +1,173 @@
+	id	name	cotwo
+0	CHN	China	4.01
+1	IND	India	3.28
+2	USA	United States	3.75
+3	IDN	Indonesia	2.18
+4	BRA	Brazil	2.81
+5	PAK	Pakistan	3.86
+6	BGD	Bangladesh	2.82
+7	NGA	Nigeria	3.04
+8	RUS	Russia	6.57
+9	JPN	Japan	2.92
+10	MEX	Mexico	2.54
+11	PHL	Philippines	2.09
+12	VNM	Vietnam	2.24
+13	ETH	Ethiopia	3.19
+14	DEU	Germany	3.2
+15	EGY	Egypt	2.86
+16	TUR	Turkey	2.7
+17	COD		2.84
+18	IRN	Iran	3.02
+19	THA	Thailand	2.27
+20	FRA	France	2.67
+21	GBR	United Kingdom	2.13
+22	ITA	Italy	2.75
+23	MMR	Burma	2.62
+24	ZAF	South Africa	2.97
+25	KOR	Korea, South	3.51
+26	UKR	Ukraine	4.27
+27	COL	Colombia	2.88
+28	SDN	Sudan	2.96
+29	TZA	Tanzania	2.73
+30	ARG	Argentina	2.81
+31	ESP	Spain	2.2
+32	KEN	Kenya	2.77
+33	POL	Poland	3.99
+34	DZA	Algeria	2.8
+35	CAN	Canada	5.88
+36	UGA	Uganda	2.83
+37	MAR	Morocco	2.54
+38	PER	Peru	2.94
+39	IRQ	Iraq	2.94
+40	SAU	Saudi Arabia	3.04
+41	AFG	Afghanistan	3.76
+42	NPL	Nepal	3.88
+43	UZB	Uzbekistan	3.82
+44	VEN	Venezuela	3.04
+45	MYS	Malaysia	2.23
+46	GHA	Ghana	3.02
+47	YEM	Yemen	2.91
+48	PRK	Korea, North	4.42
+49	SYR	Syria	2.67
+50	ROU	Romania	3.59
+51	MOZ	Mozambique	2.7
+52	AUS	Australia	2.84
+53	LKA	Sri Lanka	2.12
+54	MDG	Madagascar	2.47
+55	CIV	Cote d'Ivoire	3.09
+56	CMR	Cameroon	3.17
+57	NLD	Netherlands	2.75
+58	CHL	Chile	2.46
+59	BFA	Burkina Faso	3.31
+60	NER	Niger	3.06
+61	KAZ	Kazakhstan	4.79
+62	MWI	Malawi	2.86
+63	ECU	Ecuador	2.55
+64	KHM	Cambodia	2.2
+65	SEN	Senegal	3.24
+66	MLI	Mali	3.32
+67	GTM	Guatemala	2.43
+68	AGO	Angola	3.0
+69	ZMB	Zambia	2.91
+70	ZWE	Zimbabwe	2.99
+71	CUB	Cuba	1.98
+72	RWA	Rwanda	2.75
+73	GRC	Greece	2.48
+74	PRT	Portugal	2.06
+75	TUN	Tunisia	2.38
+76	TCD	Chad	2.95
+77	BEL	Belgium	2.79
+78	GIN	Guinea	3.26
+79	CZE	Czech Republic	3.56
+80	SOM	Somalia	2.78
+81	BOL	Bolivia	3.21
+82	HUN	Hungary	3.66
+83	BDI	Burundi	2.74
+84	DOM	Dominican Republic	2.19
+85	BLR	Belarus	5.27
+86	HTI	Haiti	2.2
+87	SWE	Sweden	4.91
+88	BEN	Benin	3.04
+89	AZE	Azerbaijan	2.81
+90	AUT	Austria	3.39
+91	HND	Honduras	2.43
+92	CHE	Switzerland	3.19
+93	TJK	Tajikistan	4.45
+94	ISR	Israel	2.61
+95	SRB	Serbia	3.4
+96	BGR	Bulgaria	3.07
+97	LAO	Laos	2.22
+98	LBY	Libya	2.81
+99	JOR	Jordan	2.72
+100	PRY	Paraguay	3.09
+101	TGO	Togo	3.0
+102	PNG	Papua New Guinea	2.16
+103	SLV	El Salvador	2.58
+104	NIC	Nicaragua	2.58
+105	ERI	Eritrea	2.9
+106	DNK	Denmark	3.26
+107	KGZ	Kyrgyzstan	4.31
+108	SVK	Slovakia	3.91
+109	FIN	Finland	6.56
+110	SLE	Sierra Leone	2.77
+111	ARE	United Arab Emirates	3.14
+112	TKM	Turkmenistan	2.92
+113	CAF	Central African Republic	3.07
+114	SGP	Singapore	2.14
+115	NOR	Norway	4.71
+116	BIH	Bosnia and Herzegovina	3.14
+117	GEO	Georgia	3.03
+118	CRI	Costa Rica	2.53
+119	HRV	Croatia	3.18
+120	MDA	Moldova	3.85
+121	NZL	New Zealand	2.1
+122	IRL	Ireland	1.97
+123	COG	Congo, Republic of the	2.82
+124	LBN	Lebanon	2.5
+125	PRI	Puerto Rico	2.11
+126	LBR	Liberia	2.79
+127	ALB	Albania	2.75
+128	LTU	Lithuania	4.91
+129	URY	Uruguay	2.51
+130	PAN	Panama	2.36
+131	MRT	Mauritania	3.09
+132	MNG	Mongolia	4.45
+133	OMN	Oman	2.92
+134	ARM	Armenia	3.08
+135	JAM	Jamaica	2.1
+136	KWT	Kuwait	3.1
+137	KWT	Kosovo	3.1
+138	PSE	West Bank	2.41
+139	LVA	Latvia	5.3
+140	NAM	Namibia	3.22
+141	MKD	Macedonia	2.79
+142	BWA	Botswana	3.4
+143	SVN	Slovenia	3.2
+144	GRL	Greenland	4.11
+145	LSO	Lesotho	2.83
+146	GMB	Gambia, The	3.23
+147	GNB	Guinea-Bissau	2.92
+148	GAB	Gabon	2.65
+149	SWZ	Swaziland	2.63
+150	EST	Estonia	5.75
+151	TTO	Trinidad and Tobago	2.14
+152	TLS	Timor-Leste	2.21
+153	CYP	Cyprus	2.32
+154	FJI	Fiji	2.07
+155	QAT	Qatar	3.11
+156	GUY	Guyana	3.08
+157	DJI	Djibouti	3.04
+158	BTN	Bhutan	3.4
+159	MNE	Montenegro	2.96
+160	GNQ	Equatorial Guinea	2.8
+161	SLB	Solomon Islands	2.06
+162	LUX	Luxembourg	2.94
+163	ESH	Western Sahara	2.69
+164	SUR	Suriname	3.0
+165	BRN	Brunei	2.23
+166	BLZ	Belize	2.32
+167	BHS	Bahamas, The	1.94
+168	ISL	Iceland	3.21
+169	NCL	New Caledonia	2.16
+170	VUT	Vanuatu	2.13
+171	FLK	Falkland Islands (Islas Malvinas)	1.45

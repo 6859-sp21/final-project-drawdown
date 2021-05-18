@@ -1,0 +1,126 @@
+{
+ "name": "Explore", "details": "solutions in each circle!",
+ "children": [
+  {
+   "name": "Electricity", "details": "Involves electricity",
+   "children": [
+    {"name": "LED Lighting", "size": 1607, "details": "Involves new types of lightbulbs"},
+    {"name": "Water Distribution Efficiency", "size": 66},
+    {"name": "Concentrated Solar Power", "size": 1860},
+    {"name": "Distributed Solar Photovoltaics", "size": 2798},
+    {"name": "Utility-Scale Photovoltaics", "size": 4232},
+    {"name": "Micro Wind Turbines", "size": 9},
+    {"name": "Onshore Wind Turbines", "size": 4721},
+    {"name": "Offshore Wind Turbines", "size": 1044},
+    {"name": "Geothermal Power", "size": 619},
+    {"name": "Small Hydropower", "size": 169},
+    {"name": "Ocean Power", "size": 138},
+    {"name": "Biomass Power", "size": 252},
+    {"name": "Nuclear Power", "size": 265}
+   ]
+  },
+  {
+   "name": "Food & Agriculture",
+   "children": [
+    {"name": "Nutrient Management", "size": 234},
+    {"name": "Farm Irrigation Efficiency", "size": 113},
+    {"name": "Plant-Rich Diets", "size": 6501},
+    {"name": "Reduced Food Waste", "size": 8745},
+    {"name": "Forest Protection", "size": 552},
+    {"name": "Indigenous Peoples’ Forest Tenure", "size": 869},
+    {"name": "Grassland Protection", "size": 335},
+    {"name": "Peatland Protection and Rewetting", "size": 2603},
+    {"name": "Sustainable Intensification for Smallholders", "size": 136},
+    {"name": "Regenerative Annual Cropping", "size": 1452},
+    {"name": "Improved Rice Production", "size": 944},
+    {"name": "System of Rice Intensification", "size": 278},
+    {"name": "Conservation Agriculture", "size": 1340}
+   ]
+  },
+  {
+   "name": "Industry",
+   "children": [
+    {"name": "Waste-to-Energy", "size": 204},
+    {"name": "Landfill Methane Capture", "size": 218},
+    {"name": "Alternative Cement", "size": 798},
+    {"name": "Bioplastics", "size": 96},
+    {"name": "Composting", "size": 214},
+    {"name": "Recycling", "size": 550},
+    {"name": "Recycled Paper", "size": 110},
+    {"name": "Refrigerant Management", "size": 5775},
+    {"name": "Alternative Refrigerants", "size": 4353},
+    {"name": "Methane Digesters", "size": 983}
+   ]
+  },
+  {
+   "name": "Transport",
+   "children": [
+    {"name": "Walkable Cities", "size": 144},
+    {"name": "Bicycle Infrastructure", "size": 256},
+    {"name": "Electric Bicycles", "size": 131},
+    {"name": "Carpooling", "size": 770},
+    {"name": "Public Transit", "size": 751},
+    {"name": "High-Speed Rail", "size": 130},
+    {"name": "Telepresence", "size": 105},
+    {"name": "Hybrid Cars", "size": 789},
+    {"name": "Efficient Trucks", "size": 461},
+    {"name": "Electric Trains", "size": 10},
+    {"name": "Electric Cars", "size": 1187},
+    {"name": "Efficient Ocean Shipping", "size": 440},
+    {"name": "Efficient Aviation", "size": 627}
+   ]
+  },
+  {
+   "name": "Buildings",
+   "children": [
+    {"name": "Biogas for Cooking", "size": 465},
+    {"name": "Smart Thermostats", "size": 699},
+    {"name": "Building Automation Systems", "size": 1697},
+    {"name": "Dynamic Glass", "size": 29},
+    {"name": "High-Performance Glass", "size": 1004},
+    {"name": "Green and Cool Roofs", "size": 60},
+    {"name": "District Heating", "size": 628},
+    {"name": "High-Efficiency Heat Pumps", "size": 416},
+    {"name": "Solar Hot Water", "size": 359},
+    {"name": "Low-Flow Fixtures", "size": 91},
+    {"name": "Improved Clean Cookstoves", "size": 3134}
+   ]
+  },
+  {
+   "name": "Land Sinks",
+   "children": [
+    {"name": "Temperate Forest Restoration", "size": 1942},
+    {"name": "Tropical Forest Restoration", "size": 5445},
+    {"name": "Managed Grazing", "size": 1642},
+    {"name": "Silvopasture", "size": 2658},
+    {"name": "Multistrata Agroforestry", "size": 1130},
+    {"name": "Tree Intercropping", "size": 1503},
+    {"name": "Perennial Staple Crops", "size": 1545},
+    {"name": "Perennial Biomass Production", "size": 400},
+    {"name": "Abandoned Farmland Restoration", "size": 1248},
+    {"name": "Tree Plantations (on Degraded Land)", "size": 2224},
+    {"name": "Bamboo Production", "size": 827}
+   ]
+  },
+  {
+   "name": "Ocean Sinks",
+   "children": [
+    {"name": "Coastal Wetland Protection", "size": 99},
+    {"name": "Coastal Wetland Restoration", "size": 77}
+   ]
+  },
+
+  {
+    "name": "Health & Education",
+    "children": [
+     {"name": "Health & Education", "size": 8542}
+    ]
+   },
+  {
+   "name": "Engineered Sinks",
+   "children": [
+    {"name": "Biochar Production", "size": 222}
+   ]
+  }
+ ]
+}

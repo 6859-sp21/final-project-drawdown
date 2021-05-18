@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=B612:wght@700&family=Fira+Sans:wght@500;900&family=Karla:wght@500&family=Oxygen:wght@700&display=swap" rel="stylesheet">
+<!-- Load d3.js -->
+<script src="https://d3js.org/d3.v4.js"></script>
+
+<!-- Color palette -->
+<script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+
+<!-- Create a div where the graph will take place -->
+<div id="my_dataviz"></div>
+<head>
+
+</head>
+<style>
+
+.writing {
+    color: black;
+    position: fixed;
+    text-align: center;
+    font-family: Fira Sans;
+    font-size: 20px;
+    font-weight: 500;
+    position: absolute;
+left: 50%;
+top: 10%;
+transform: translate(-50%, -50%);
+padding: 10px;
+
+}
+
+.writing2 {
+  color: black;
+    position: fixed;
+    text-align: center;
+    font-family: Fira Sans;
+    font-size: 15px;
+    font-weight: 500;
+    position: absolute;
+left: 50%;
+top: 17%;
+transform: translate(-50%, -50%);
+padding: 10px;
+
+}
+.node:hover{
+  stroke-width: 7px !important;
+  opacity: 1 !important;
+}
+
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  margin: 0;
+  position: fixed;
+  font-family: Fira Sans;
+}
+.button2 {
+  background-color:grey ; 
+  color:white; 
+  border: 2px solid #4CAF50;
+  left: 85%;
+  top: 95%;
+}
+
+.button1 {
+  background-color:grey; 
+  color:white; 
+  border: 2px solid #4CAF50;
+  left: 15%;
+  top: 95%;
+}
+
+
+.button1:hover {
+  background-color: #4CAF50;
+  color: white;
+  left: 15%;
+}
+
+.button2:hover {
+  background-color: #4CAF50;
+  color: white;
+  left: 85%;
+}
+
+.footer {
+  position: absolute;
+  clear: both;
+  left: 0;
+  top: 95%;
+  width: 100%;
+  color: white;
+  text-align: center;
+  font-family: Fira Sans;
+  height: 900 px;
+  background-color: black;
+  
+}
+
+</style>
+
+
+<div>
+  <svg id="my_dataviz2" height=300 width=450></svg>
+</div>
+
+<div id="my_legend"></div>
+
+<div class="writing">
+  <p> Now we understand the solution space ...</p>
+  <p> Can we get to net zero by 2030?</p>
+</div>
+<div class="writing2">
+  <p> Drag Solutions to the solution space &#x1F449;</p>
+</div>
+
+<div class="footer">
+  <button class="button button1"><a href="circle_pack_tooltip.html">Back</a></button>
+  <button class="button button2"><a href="endpage.html">End</a></button>
+  <p><a href="https://drawdown.org/solutions/table-of-solutions">Drawdown Data</a></p> 
+  <p><a href="http://bl.ocks.org/denisemauldin/cb870e6f439864a5ae74d4fc561ac46f">Blocks</a></p>
+</div>
+
+<p id="demo"></p>
+<script>
+
+var carbon = 33.1
+var cost = 0
+
+
+// set the dimensions and margins of the graph
+var width = 1200
+var height = 760
+
+// append the svg object to the body of the page
+var svg = d3.select("#my_dataviz")
+  .append("svg")
+    .attr("width", width)
+    .attr("height", height)
+
+// Read data 
+d3.csv("drawdown_solutions.csv", function(data) {
+
+  // Filter a bit the data -> more than 1 million inhabitants
+  //data = data.filter(function(d){ return d.value>10000000 })
+
+  // Color palette for continents?
+  var color = d3.scaleOrdinal()
+    .domain(["Transportation", "Buildings", "Land Sinks", "Industry", "Health and Education", "Food & Agriculture", "Engineered Sinks", "Electricity", "Coastal Sinks"])
+    .range(d3.schemeSet1);
+
+  // Size scale for countries
+  var size = d3.scaleLinear()
+    .domain([0, 100])
+    .range([7,55])  // circle will be between 7 and 55 px wide
+
+  // create a tooltip
+  var Tooltip = d3.select("#my_dataviz")
+    .append("div")
+    .style("opacity", 0)
+    .attr("class", "tooltip")
+    .style("background-color", "white")
+    .style("border", "solid")
+    .style("border-width", "2px")
+    .style("border-radius", "5px")
+    .style("padding", "5px")
+
+
+
+    const f = d3.format(".4f");
+
+  // Three function that change the tooltip when user hover / move / leave a cell
+  var mouseover = function(d) {
+    Tooltip
+      .style("opacity", 1)
+  }
+  var mousemove = function(d) {
+    Tooltip
+      .html('<u>' + d.key + '</u>' + "<br>" + f(d.value/30) + " Billion Tonnes Sequestered per year" + ", " + 'cost is: ' + d.price + ' billion per year')
+      .style("left", (d3.mouse(this)[0]+20) + "px")
+      .style("top", (d3.mouse(this)[1]) + "px")
+      .style("font-family", "Fira Sans")
+
+  }
+  var mouseleave = function(d) {
+    Tooltip
+      .style("opacity", 0)
+  }
+
+  // Initialize the circle: all located at the center of the svg area
+  var node = svg.append("g")
+    .selectAll("circle")
+    .data(data)
+    .enter()
+    .append("circle")
+      .attr("class", "node")
+      .attr("r", function(d){ return size(d.value)})
+      .attr("cx", width/2)
+      .attr("cy", height / 2)
+      .style("fill", function(d){ return color( d.subregion)})
+      .style("fill-opacity", 0.8)
+      .attr("stroke", "black")
+      .style("stroke-width", 1)
+      .on("mouseover", mouseover) // What to do when hovered
+      .on("mousemove", mousemove)
+      .on("mouseleave", mouseleave)
+
+      .call(d3.drag() // call specific function when circle is dragged
+           .on("start", dragstarted)
+           .on("drag", dragged)
+           .on("end", dragended)
+           .on("end", function (d) {
+            
+               carbon = carbon - (d.value/30)
+               cost = cost + (d.price/30)
+               console.log(carbon)        
+               console.log(cost);
+           }));
+
+  
+
+  // Features of the forces applied to the nodes:
+  var simulation = d3.forceSimulation()
+      .force("center", d3.forceCenter().x(width / 2).y(height / 2)) // Attraction to the center of the svg area
+      .force("charge", d3.forceManyBody().strength(.1)) // Nodes are attracted one each other of value is > 0
+      .force("collide", d3.forceCollide().strength(.2).radius(function(d){ return (size(d.value)+3) }).iterations(1)) // Force that avoids circle overlapping
+
+  // Apply these forces to the nodes and update their positions.
+  // Once the force algorithm is happy with positions ('alpha' value is low enough), simulations will stop.
+  simulation
+      .nodes(data)
+      .on("tick", function(d){
+        node
+            .attr("cx", function(d){ return d.x; })
+            .attr("cy", function(d){ return d.y; })
+      });
+
+  // What happens when a circle is dragged?
+  function dragstarted(d) {
+    if (!d3.event.active) simulation.alphaTarget(.03).restart();
+    d.fx = d.x;
+    d.fy = d.y;
+  }
+  function dragged(d) {
+    d.fx = d3.event.x;
+    d.fy = d3.event.y;
+  }
+  function dragended(d) {
+    if (!d3.event.active) simulation.alphaTarget(.03);
+    d.fx = null;
+    d.fy = null;
+    
+  }
+
+})
+
+var rectangle = svg.append("g").append("rect")
+                    .attr("x", width - 400)
+                    .attr("y", height - 570)
+                    .attr("width", 500)
+                    .attr("height", 400); 
+
+text = svg.append("g").append('text')
+  .text('Amount of Carbon:' + ' ' + carbon +  ' ' + 'Billion Tonnes')
+  .attr('dy','0.35em')
+  .attr('transform', 'translate(480,250)')
+  .attr("x",width - 780) 
+  .attr("y", height - 520)
+  .style("fill", "#fe9929")
+  .style("font-family", "Fira Sans")
+
+  text = svg.append('text')
+  .text('Cost: ' + ' ' + cost +  ' ' + 'billions of Dollars')
+  .attr('dy','0.35em')
+  .attr('transform', 'translate(480,250)')
+  .attr("x", width - 780) 
+  .attr("y", height - 500)
+  .style("fill", "#fe9929")
+  .style("font-family", "Fira Sans")
+
+
+  function update() {
+      var t = d3.transition()
+      .duration(750);
+      
+    var text = svg.select("g").selectAll("text")
+    
+    text.exit().remove();
+
+   // text.enter().append("text")
+    text = svg.append('text')
+      .attr("class", "enter")
+      .text('Amount of Carbon:' + ' ' + carbon +  ' ' + 'Billion Tonnes')
+      .attr('dy','0.35em')
+      .attr('transform', 'translate(480,250)')
+      .attr("x",width - 780) 
+      .attr("y", height - 520)
+      .style("fill", "#fe9929")
+    .transition(t)
+  
+    text = svg.append('text')
+  .text('Cost: ' + ' ' + cost +  ' ' + 'billions of Dollars')
+  .attr('dy','0.35em')
+  .attr('transform', 'translate(480,250)')
+  .attr("x", width - 780) 
+  .attr("y", height - 500)
+  .style("fill", "#fe9929")
+    
+    
+      }
+
+      d3.select("rect")
+      .on({
+  "click": function(d) {
+    //here d will give the bound object 
+  }
+});
+
+
+ d3.select("rect")
+      .on("mouseover", update);
+
+// The scale you use for bubble size
+var size = d3.scaleSqrt()
+  .domain([1, 100])  // What's in the data, let's say it is percentage
+  .range([7,55])  // Size in pixel
+
+// Add legend: circles
+var valuesToShow = [10, 50, 100]
+var xCircle = 230
+var xLabel = 380
+var yCircle = 230
+svg
+  .selectAll("legend")
+  .data(valuesToShow)
+  .enter()
+  .append("circle")
+    .attr("cx", xCircle)
+    .attr("cy", function(d){ return yCircle - size(d) } )
+    .attr("r", function(d){ return size(d) })
+    .style("fill", "none")
+    .attr("stroke", "black")
+
+// Add legend: segments
+svg
+  .selectAll("legend")
+  .data(valuesToShow)
+  .enter()
+  .append("line")
+    .attr('x1', function(d){ return xCircle + size(d) } )
+    .attr('x2', xLabel)
+    .attr('y1', function(d){ return yCircle - size(d) } )
+    .attr('y2', function(d){ return yCircle - size(d) } )
+    .attr('stroke', 'black')
+    .style('stroke-dasharray', ('2,2'))
+
+// Add legend: labels
+svg
+  .selectAll("legend")
+  .data(valuesToShow)
+  .enter()
+  .append("text")
+    .attr('x', xLabel)
+    .attr('y', function(d){ return yCircle - size(d) } )
+    .text( "Gigatons")
+    .text( function(d){ return d } )
+    .style("font-size", 10)
+    .style("font-family", "Fira Sans")
+    .attr('alignment-baseline', 'middle')
+
+    svg
+  .selectAll("legend")
+  .data(valuesToShow)
+  .enter()
+  .append("text")
+    .attr('x', xLabel -20)
+    .attr('y', function(d){ return yCircle - size(d) + 9})
+    .text( "GHGs Sequestered (Bn tonnes)")
+    .style("font-size", 8)
+    .style("font-family", "Fira Sans")
+    .attr('alignment-baseline', 'middle')
+
+
+
+// create a list of keys
+var keys = ["Transportation", "Buildings", "Land Sinks", "Industry", "Health and Education", "Food & Agriculture", "Engineered Sinks", "Electricity", "Coastal Sinks"]
+
+// Usually you have a color scale in your chart already
+var color = d3.scaleOrdinal()
+  .domain(keys)
+  .range(d3.schemeSet1);
+
+// Add one dot in the legend for each name.
+svg.selectAll("mydots")
+  .data(keys)
+  .enter()
+  .append("circle")
+    .attr("cx", 200)
+    .attr("cy", function(d,i){ return 280 + i*25}) // 100 is where the first dot appears. 25 is the distance between dots
+    .attr("r", 7)
+    .style("fill", function(d){ return color(d)})
+
+// Add one dot in the legend for each name.
+svg.selectAll("mylabels")
+  .data(keys)
+  .enter()
+  .append("text")
+    .attr("x", 220)
+    .attr("y", function(d,i){ return 280 + i*25}) // 100 is where the first dot appears. 25 is the distance between dots
+    .style("fill", "black")
+    .style("font-family", "Fira Sans")
+    .text(function(d){ return d})
+    .attr("text-anchor", "left")
+    .style("alignment-baseline", "middle")
+
+
+    svg.append("text")
+        .attr("x", (width -600))             
+        .attr("y", height -110)
+        .attr("dy", "0em")
+        .attr("text-anchor", "middle")  
+        .style("font-size", "10px")
+        .style("fill", "grey")
+        .attr("font-family", "Fira Sans")
+        .text("Solutions")
+        .style("font-size", "20px");
+
+        svg.append("line")          // attach a line
+    .style("stroke", "black")  // colour the line
+    .attr("x1", (width -600))     // x position of the first end of the line
+    .attr("y1", height - 130)      // y position of the first end of the line
+    .attr("x2", (width -600))     // x position of the second end of the line
+    .attr("y2", height -200);    // y position of the second end of the line
+
+
+    svg.append("text")
+        .attr("x", (width -200))             
+        .attr("y", height -110)
+        .attr("dy", "0em")
+        .attr("text-anchor", "middle")  
+        .style("font-size", "10px")
+        .style("fill", "grey")
+        .attr("font-family", "Fira Sans")
+        .text("Solution Space")
+        .style("font-size", "20px");
+
+        svg.append("line")          // attach a line
+    .style("stroke", "black")  // colour the line
+    .attr("x1", (width -200))     // x position of the first end of the line
+    .attr("y1", height - 130)      // y position of the first end of the line
+    .attr("x2", (width -200))     // x position of the second end of the line
+    .attr("y2", height -180);    // y position of the second end of the line
+
+</script>
+
+</script>
