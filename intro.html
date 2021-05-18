@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<!-- Load d3.js -->
+<script src="https://d3js.org/d3.v4.js"></script>
+
+<!-- Load d3-annotation -->
+<script src="https://rawgit.com/susielu/d3-annotation/master/d3-annotation.min.js"></script>
+
+<!-- Create a div where the graph will take place -->
+
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Fonts to load from fonts.google.com-->
+<!-- Saira comes in 9 weights -->
+<link href="https://fonts.googleapis.com/css?family=Saira:100,200,300,400,500,600,700,800,900" rel="stylesheet"> 
+  
+<!-- Saira also comes in 4 widths -->
+<link href="https://fonts.googleapis.com/css?family=Saira|Saira+Condensed|Saira+Extra+Condensed|Saira+Semi+Condensed" rel="stylesheet"> 
+ 
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=B612:wght@700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=B612:wght@700&family=Karla:wght@500&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=B612:wght@700&family=Karla:wght@500&family=Oxygen:wght@700&display=swap" rel="stylesheet">
+
+<!-- These fonts are fairly different from one another -->
+<link href="https://fonts.googleapis.com/css?family=Aldrich|Arima+Madurai|Arvo|Henny+Penny|Indie+Flower|Libre+Baskerville|Pirata+One|Poiret+One|Sancreek|Satisfy|Share+Tech+Mono|Smokum|Snowburst+One|Special+Elite" rel="stylesheet">
+<link href='https://fonts.googleapis.com/css?family=Della Respira' rel='stylesheet'>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=B612:wght@700&family=Fira+Sans:wght@500;900&family=Karla:wght@500&family=Oxygen:wght@700&display=swap" rel="stylesheet">
+
+</head>
+<title>Start</title>
+<style>
+
+
+
+  .names {
+  fill: none;
+  stroke: #fff;
+  stroke-linejoin: round;
+  }
+
+    /* Tooltip CSS */
+    .d3-tip {
+    line-height: 1.5;
+    font-weight: 400;
+    font-family:"avenir next", Arial, sans-serif;
+    padding: 6px;
+    background: rgba(0, 0, 0, 0.6);
+    color: #FFA500;
+    border-radius: 1px;
+    pointer-events: none;
+    }
+
+    /* Creates a small triangle extender for the tooltip */
+    .d3-tip:after {      
+      box-sizing: border-box;
+      display: inline;
+      font-size: 8px;
+      width: 100%;
+      line-height: 1.5;
+      color: rgba(0, 0, 0, 0.6);
+      position: absolute;
+      pointer-events: none;
+      
+    }
+
+    /* Northward tooltips */
+    .d3-tip.n:after {
+      content: "\25BC";
+      margin: -1px 0 0 0;
+      top: 100%;
+      left: 0;
+      text-align: center;
+    }
+
+    /* Eastward tooltips */
+    .d3-tip.e:after {
+      content: "\25C0";
+      margin: -4px 0 0 0;
+      top: 50%;
+      left: -8px;
+    }
+
+    /* Southward tooltips */
+    .d3-tip.s:after {
+      content: "\25B2";
+      margin: 0 0 1px 0;
+      top: -8px;
+      left: 0;
+      text-align: center;
+    }
+
+    /* Westward tooltips */
+    .d3-tip.w:after {
+      content: "\25B6";
+      margin: -4px 0 0 -1px;
+      top: 50%;
+      left: 100%;
+    }
+
+/*    text{
+      pointer-events:none;
+    }*/
+
+    .details{
+      color:white;
+    }
+
+    .right {
+  margin: 0;
+  position: absolute;
+  top: 10%;
+  left: 15%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.left {
+  margin: 0;
+  position: absolute;
+  top: 10%;
+  left: 85%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+.button2 {
+  background-color:white ; 
+  color:white; 
+  border: 2px solid #4CAF50;
+}
+
+.button1 {
+  background-color:white ; 
+  color:white; 
+  border: 2px solid #4CAF50;
+}
+
+
+.button1:hover {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.button2:hover {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.svg-container{
+     display: block;
+     margin: 7 auto;
+  }
+
+  .svg-style {
+        background-color: lightblue;
+        display: block;
+        margin: auto;
+           }
+
+           footer{
+  text-align: left;
+}
+.footer {
+  position: absolute;
+  clear: both;
+  left: 0;
+  margin-top: 800px;
+  width: 100%;
+  color: white;
+  text-align: center;
+  font-family: Arvo;
+  height: 200 px;
+  background-color: black;
+}
+
+label {
+display: block;
+}
+
+input {
+width: 30px;
+margin-left: 20px;
+}
+
+h2 {
+clear: both;
+padding-top: 20px;
+position: absolute;
+top: -100%;
+}
+
+button {
+width: 100px;
+margin-top: 20px;
+}
+
+.quiz {
+margin-top: 20px;
+display:inline-block;
+width:32%;
+}
+
+.submit {
+  display:inline-block;
+  width:32%;
+}
+
+.results {
+  display:inline-block;
+  width:32%;
+}
+
+.writing {
+    color: white;
+    position: fixed;
+    top: 10%;
+    width:100%;
+    text-align: center;
+    font-family: Fira Sans;
+    font-size: 30px;
+    font-weight: 500;
+
+}
+
+body {background-color: black;}
+
+.arrow {
+  border: solid white;
+  border-width: 0 7px 7px 0;
+  display: inline-block;
+  padding: 18px;
+  top: 40%;
+  left: 60%;
+  position: fixed;
+  
+}
+
+.arrow:hover {
+    border: solid green;
+    border-width: 0 7px 7px 0;
+  display: inline-block;
+  padding: 18px;
+  top: 40%;
+  left: 60%;
+  position: fixed;
+}
+
+.right {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+
+
+</style>
+
+<body>
+
+    <div class="writing">
+        <p>Climate Breakdown is the 'greatest fight of our lives'. </p>
+        <p>Using the data visualizations on this website you will learn about its causes, effects and solutions.</p>
+        <p>By the end you will know how we can solve this problem in the next 10 years.</p>
+        <p><br></p>
+        <p>Ready?</p>
+      </div>
+
+      <p><a href="climate_stripes.html"><i class="arrow right"></i></a></p>
+
+
+<script>
+
+</script>
+
+</body>
+</html>
+

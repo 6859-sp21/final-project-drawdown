@@ -1,0 +1,173 @@
+,id,name,cotwo
+0,CHN,China,1.58
+1,IND,India,1.25
+2,USA,United States,1.64
+3,IDN,Indonesia,0.83
+4,BRA,Brazil,1.1
+5,PAK,Pakistan,1.57
+6,BGD,Bangladesh,0.96
+7,NGA,Nigeria,1.15
+8,RUS,Russia,2.6
+9,JPN,Japan,1.4
+10,MEX,Mexico,1.18
+11,PHL,Philippines,0.87
+12,VNM,Vietnam,0.89
+13,ETH,Ethiopia,1.23
+14,DEU,Germany,1.67
+15,EGY,Egypt,1.01
+16,TUR,Turkey,1.06
+17,COD,,1.14
+18,IRN,Iran,1.18
+19,THA,Thailand,0.98
+20,FRA,France,1.07
+21,GBR,United Kingdom,0.87
+22,ITA,Italy,1.18
+23,MMR,Burma,0.93
+24,ZAF,South Africa,1.07
+25,KOR,"Korea, South",1.51
+26,UKR,Ukraine,2.19
+27,COL,Colombia,1.09
+28,SDN,Sudan,1.14
+29,TZA,Tanzania,1.08
+30,ARG,Argentina,1.01
+31,ESP,Spain,0.94
+32,KEN,Kenya,1.11
+33,POL,Poland,2.17
+34,DZA,Algeria,1.26
+35,CAN,Canada,2.31
+36,UGA,Uganda,1.14
+37,MAR,Morocco,1.14
+38,PER,Peru,1.04
+39,IRQ,Iraq,1.22
+40,SAU,Saudi Arabia,1.15
+41,AFG,Afghanistan,1.59
+42,NPL,Nepal,1.49
+43,UZB,Uzbekistan,1.63
+44,VEN,Venezuela,1.21
+45,MYS,Malaysia,0.87
+46,GHA,Ghana,1.3
+47,YEM,Yemen,1.05
+48,PRK,"Korea, North",2.05
+49,SYR,Syria,1.06
+50,ROU,Romania,1.59
+51,MOZ,Mozambique,1.11
+52,AUS,Australia,1.0
+53,LKA,Sri Lanka,0.95
+54,MDG,Madagascar,0.94
+55,CIV,Cote d'Ivoire,1.33
+56,CMR,Cameroon,1.2
+57,NLD,Netherlands,1.34
+58,CHL,Chile,0.89
+59,BFA,Burkina Faso,1.47
+60,NER,Niger,1.23
+61,KAZ,Kazakhstan,1.9
+62,MWI,Malawi,1.2
+63,ECU,Ecuador,0.98
+64,KHM,Cambodia,0.93
+65,SEN,Senegal,1.34
+66,MLI,Mali,1.53
+67,GTM,Guatemala,1.13
+68,AGO,Angola,1.15
+69,ZMB,Zambia,1.13
+70,ZWE,Zimbabwe,1.17
+71,CUB,Cuba,0.85
+72,RWA,Rwanda,1.02
+73,GRC,Greece,0.97
+74,PRT,Portugal,0.82
+75,TUN,Tunisia,1.05
+76,TCD,Chad,1.09
+77,BEL,Belgium,1.26
+78,GIN,Guinea,1.43
+79,CZE,Czech Republic,1.86
+80,SOM,Somalia,1.07
+81,BOL,Bolivia,1.17
+82,HUN,Hungary,1.69
+83,BDI,Burundi,1.03
+84,DOM,Dominican Republic,0.92
+85,BLR,Belarus,2.94
+86,HTI,Haiti,0.9
+87,SWE,Sweden,2.71
+88,BEN,Benin,1.22
+89,AZE,Azerbaijan,1.22
+90,AUT,Austria,1.66
+91,HND,Honduras,1.05
+92,CHE,Switzerland,1.39
+93,TJK,Tajikistan,1.87
+94,ISR,Israel,0.88
+95,SRB,Serbia,1.4
+96,BGR,Bulgaria,1.26
+97,LAO,Laos,0.95
+98,LBY,Libya,1.09
+99,JOR,Jordan,0.94
+100,PRY,Paraguay,1.15
+101,TGO,Togo,1.25
+102,PNG,Papua New Guinea,0.8
+103,SLV,El Salvador,1.06
+104,NIC,Nicaragua,1.03
+105,ERI,Eritrea,1.18
+106,DNK,Denmark,1.73
+107,KGZ,Kyrgyzstan,1.76
+108,SVK,Slovakia,2.05
+109,FIN,Finland,3.16
+110,SLE,Sierra Leone,1.19
+111,ARE,United Arab Emirates,1.31
+112,TKM,Turkmenistan,1.12
+113,CAF,Central African Republic,1.25
+114,SGP,Singapore,0.84
+115,NOR,Norway,2.58
+116,BIH,Bosnia and Herzegovina,1.32
+117,GEO,Georgia,1.27
+118,CRI,Costa Rica,1.03
+119,HRV,Croatia,1.38
+120,MDA,Moldova,1.94
+121,NZL,New Zealand,0.71
+122,IRL,Ireland,0.81
+123,COG,"Congo, Republic of the",1.18
+124,LBN,Lebanon,0.9
+125,PRI,Puerto Rico,0.9
+126,LBR,Liberia,1.16
+127,ALB,Albania,0.99
+128,LTU,Lithuania,2.87
+129,URY,Uruguay,0.88
+130,PAN,Panama,1.03
+131,MRT,Mauritania,1.38
+132,MNG,Mongolia,2.01
+133,OMN,Oman,1.19
+134,ARM,Armenia,1.35
+135,JAM,Jamaica,0.89
+136,KWT,Kuwait,1.23
+137,KWT,Kosovo,1.23
+138,PSE,West Bank,0.86
+139,LVA,Latvia,3.39
+140,NAM,Namibia,1.18
+141,MKD,Macedonia,1.11
+142,BWA,Botswana,1.26
+143,SVN,Slovenia,1.44
+144,GRL,Greenland,1.6
+145,LSO,Lesotho,1.04
+146,GMB,"Gambia, The",1.26
+147,GNB,Guinea-Bissau,1.19
+148,GAB,Gabon,1.1
+149,SWZ,Swaziland,0.96
+150,EST,Estonia,3.52
+151,TTO,Trinidad and Tobago,0.94
+152,TLS,Timor-Leste,0.82
+153,CYP,Cyprus,0.84
+154,FJI,Fiji,0.7
+155,QAT,Qatar,1.25
+156,GUY,Guyana,1.26
+157,DJI,Djibouti,1.24
+158,BTN,Bhutan,1.26
+159,MNE,Montenegro,1.18
+160,GNQ,Equatorial Guinea,1.1
+161,SLB,Solomon Islands,0.78
+162,LUX,Luxembourg,1.5
+163,ESH,Western Sahara,1.2
+164,SUR,Suriname,1.19
+165,BRN,Brunei,0.87
+166,BLZ,Belize,1.14
+167,BHS,"Bahamas, The",0.78
+168,ISL,Iceland,1.22
+169,NCL,New Caledonia,0.7
+170,VUT,Vanuatu,0.71
+171,FLK,Falkland Islands (Islas Malvinas),0.56

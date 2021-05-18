@@ -1,10 +1,10 @@
 {
- "name": "flare",
+ "name": "Explore", "details": "solutions in each circle!",
  "children": [
   {
-   "name": "Electricity",
+   "name": "Electricity", "details": "Involves electricity",
    "children": [
-    {"name": "LED Lighting", "size": 1607},
+    {"name": "LED Lighting", "size": 1607, "details": "Involves new types of lightbulbs"},
     {"name": "Water Distribution Efficiency", "size": 66},
     {"name": "Concentrated Solar Power", "size": 1860},
     {"name": "Distributed Solar Photovoltaics", "size": 2798},
@@ -83,7 +83,7 @@
     {"name": "High-Efficiency Heat Pumps", "size": 416},
     {"name": "Solar Hot Water", "size": 359},
     {"name": "Low-Flow Fixtures", "size": 91},
-    {"name": "Improved Clean Cookstoves", "size": 4143}
+    {"name": "Improved Clean Cookstoves", "size": 3134}
    ]
   },
   {

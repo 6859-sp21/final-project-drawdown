@@ -10,6 +10,7 @@
 
 
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Fonts to load from fonts.google.com-->
 <!-- Saira comes in 9 weights -->
 <link href="https://fonts.googleapis.com/css?family=Saira:100,200,300,400,500,600,700,800,900" rel="stylesheet"> 
@@ -20,12 +21,142 @@
 <!-- These fonts are fairly different from one another -->
 <link href="https://fonts.googleapis.com/css?family=Aldrich|Arima+Madurai|Arvo|Henny+Penny|Indie+Flower|Libre+Baskerville|Pirata+One|Poiret+One|Sancreek|Satisfy|Share+Tech+Mono|Smokum|Snowburst+One|Special+Elite" rel="stylesheet">
 <link href='https://fonts.googleapis.com/css?family=Della Respira' rel='stylesheet'>
+<link href="https://fonts.googleapis.com/css2?family=B612:wght@700&family=Fira+Sans:wght@500;900&family=Karla:wght@500&family=Oxygen:wght@700&display=swap" rel="stylesheet">
 </head>
 <title>Effects</title>
 <style>
 
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  margin: 0;
+  position: fixed;
+  font-family: Fira Sans;
+  left: 8%;
+  top: 35%;
+}
 
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  border-radius: 4px;
+ 
 
+  /* Position the tooltip */
+  position: fixed;
+  z-index: 1;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  margin: 0;
+  font-family: Fira Sans;
+  left: 5%;
+  top: 30%;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+.tooltip2 {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  margin: 0;
+  position: fixed;
+  font-family: Fira Sans;
+  left: 8%;
+  top: 40%;
+}
+
+.tooltip2 .tooltip2text {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+}
+
+.tooltip2:hover .tooltip2text {
+  visibility: visible;
+}
+
+.tooltip3 {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  margin: 0;
+  position: fixed;
+  font-family: Fira Sans;
+  left: 8%;
+  top: 44%;
+}
+
+.tooltip3 .tooltip3text {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+}
+
+.tooltip3:hover .tooltip3text {
+  visibility: visible;
+}
+
+.tooltip4 {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  margin: 0;
+  position: fixed;
+  font-family: Fira Sans;
+  left: 8%;
+  top: 48%;
+}
+
+.tooltip4 .tooltip4text {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+}
+
+.tooltip4:hover .tooltip4text {
+  visibility: visible;
+}
   .names {
   fill: none;
   stroke: #fff;
@@ -36,7 +167,7 @@
     .d3-tip {
     line-height: 1.5;
     font-weight: 400;
-    font-family:"avenir next", Arial, sans-serif;
+    font-family:"Fira Sans", Arial, sans-serif;
     padding: 6px;
     background: rgba(0, 0, 0, 0.6);
     color: #FFA500;
@@ -117,19 +248,7 @@
   transform: translate(-50%, -50%);
 }
 
-.button {
-  background-color: #4CAF50; /* Green */
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-  border-radius: 4px;
-}
+
 .button2 {
   background-color:white ; 
   color:white; 
@@ -153,9 +272,15 @@
   color: white;
 }
 
-.svg-container{
+.svg {
      display: block;
-     margin: 7 auto;
+     margin: 0 auto;
+     margin: 0;
+  position: absolute;
+  top: 2%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   }
 
   .svg-style {
@@ -164,36 +289,358 @@
         margin: auto;
            }
 
-           footer{
-  text-align: left;
-}
 .footer {
-  position: fixed;
+  position: absolute;
+  clear: both;
   left: 0;
-  bottom: 0;
+  margin-top: 800px;
   width: 100%;
-  color: black;
+  color: white;
   text-align: center;
-  font-family: Arvo;
+  font-family: Fira Sans;
+  height: 200 px;
+  background-color: black;
+  
+}
+
+label {
+display: block;
+}
+
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  margin: 0;
+  position: fixed;
+  font-family: Fira Sans;
+}
+.button2 {
+  background-color:white ; 
+  color:white; 
+  border: 2px solid #4CAF50;
+  left: 85%;
+  top: 95%;
+}
+
+.button1 {
+  background-color:white ; 
+  color:white; 
+  border: 2px solid #4CAF50;
+  left: 15%;
+  top: 95%;
+}
+
+
+.button1:hover {
+  background-color: #4CAF50;
+  color: white;
+  left: 15%;
+}
+
+.button2:hover {
+  background-color: #4CAF50;
+  color: white;
+  left: 85%;
+}
+
+.filter_a2_2040 {
+  background-color: #87ceeb; /* Green */
+  border: none;
+  color: white;
+  padding: 5px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  margin: 0;
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  border-radius: 4px;
+  border: 2px solid grey;
+  font-family: Fira Sans;
+}
+
+.filter_a2_2060 {
+  background-color: #87ceeb; /* Green */
+  border: none;
+  color: white;
+  padding: 5px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  margin: 0;
+  position: absolute;
+  top: 15%;
+  left: 10%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  border-radius: 4px;
+  border: 2px solid grey;
+  font-family: Fira Sans;
+}
+
+.filter_a2_2080 {
+  background-color: #87ceeb; /* Green */
+  border: none;
+  color: white;
+  padding: 5px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  margin: 0;
+  position: absolute;
+  top: 20%;
+  left: 10%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  border-radius: 4px;
+  border: 2px solid grey;
+  font-family: Fira Sans;
+}
+
+.filter_a2_2100 {
+  background-color: #87ceeb; /* Green */
+  border: none;
+  color: white;
+  padding: 5px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  margin: 0;
+  position: absolute;
+  top: 25%;
+  left: 10%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  border-radius: 4px;
+  border: 2px solid grey;
+  font-family: Fira Sans;
+}
+
+.filter_b1_2040 {
+  background-color: #87ceeb; /* Green */
+  border: none;
+  color: white;
+  padding: 5px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+  margin: 0;
+  position: absolute;
+  top: 10%;
+  left: 20%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  border: 2px solid grey;
+  font-family: Fira Sans;
+}
+
+.filter_b1_2060 {
+  background-color: #87ceeb; /* Green */
+  border: none;
+  color: white;
+  padding: 5px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+  margin: 0;
+  position: absolute;
+  top: 15%;
+  left: 20%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  border: 2px solid grey;
+  font-family: Fira Sans;
+}
+
+.filter_b1_2080 {
+  background-color: #87ceeb; /* Green */
+  border: none;
+  color: white;
+  padding: 5px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+  margin: 0;
+  position: absolute;
+  top: 20%;
+  left: 20%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  border: 2px solid grey;
+  font-family: Fira Sans;
+}
+
+.filter_b1_2100 {
+  background-color: #87ceeb; /* Green */
+  border: none;
+  color: white;
+  padding: 5px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+  margin: 0;
+  position: absolute;
+  top: 25%;
+  left: 20%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  border: 2px solid grey;
+  font-family: Fira Sans;
+}
+
+input {
+width: 30px;
+margin-left: 20px;
+}
+
+.b1 {
+position: absolute;
+  top: 6%;
+  left: 20%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  font-family: Fira Sans;
+}
+
+.a2 {
+position: absolute;
+position: absolute;
+  top: 6%;
+  left: 10%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  font-family: Fira Sans;
+}
+
+.quiz {
+margin-top: 20px;
+display:inline-block;
+width:32%;
+}
+
+.submit {
+  display:inline-block;
+  width:32%;
+}
+
+.results {
+  display:inline-block;
+  width:32%;
+}
+
+.writing {
+    color: black;
+    position: fixed;
+    text-align: center;
+    font-family: Fira Sans;
+    font-size: 20px;
+    font-weight: 500;
+    position: absolute;
+left: 50%;
+top: 5%;
+transform: translate(-50%, -50%);
+padding: 10px;
+
+}
+
+.writing2 {
+  color: black;
+    position: fixed;
+    text-align: center;
+    font-family: Fira Sans;
+    font-size: 15px;
+    font-weight: 500;
+    position: absolute;
+left: 50%;
+top: 10%;
+transform: translate(-50%, -50%);
+padding: 10px;
+
 }
 
 
 </style>
 
 <body>
-  <div class="right">
-    <button class="button button1"><a href="spider.html">Back</a></button>
+
+  <div class="a2">
+    <p> Scenario A2 </p>
   </div>
 
-  <div class="left">
-    <button class="button button2"><a href="circle_packing.html">Next</a></button>
+  <div class="b1">
+    <p> Scenario B1</p>
   </div>
-</div>
-            
+
+  <div class="writing">
+    <p> But how much do scientists think these emissions will heat the world?</p>
+  </div>
+
+  <div class="writing2">
+    <p> Modelling the climate is very hard, and scientists have made different estimates of heating from GHGs. Let's look at two estimates ('A2' and 'B1') based on current emissions. The map below starts with warming by 2040 under A2 scenario.</p>
+  </div>
+ 
+
+  <div class="tooltip">What is this?
+    <span class="tooltiptext">The IPCC have calculated two estimates for the rise in temperature in degrees centigrade by 2040, based on climate science. Toggle between the two scenarios to try to see how they differ.</span>
+  </div>
+
+  <div class="tooltip2">1.5 degrees warming
+    <span class="tooltip2text">The IPCC is the International Organisation that supports climate change research. They have calculated two possible futures, based on climate science. Toggle between the two scenarios to try to see how they differ.</span>
+  </div>
+
+  <div class="tooltip3"> 2 degrees warming
+    <span class="tooltip3text">The IPCC is the International Organisation that supports climate change research. They have calculated two possible futures, based on climate science. Toggle between the two scenarios to try to see how they differ.</span>
+  </div>
+
+  <div class="tooltip4">Above 2 degrees warming
+    <span class="tooltip4text">The IPCC is the International Organisation that supports climate change research. They have calculated two possible futures, based on climate science. Toggle between the two scenarios to try to see how they differ.</span>
+  </div>
+
 <div class="footer">
+  <button class="button button1"><a href="you_draw_it.html">Back</a></button>
+  <button class="button button2"><a href="circle_pack_tooltip.html">Next</a></button>
+  <p>Quiz!</p>
+  <div id="quiz"></div>
+  <button id="submit">Get Results</button>
+  <div id="results"></div>
   <p><a href="https://www.ipcc-data.org/sim/gcm_clim/SRES_TAR/ddc_sres_emissions.html">IPCC Data</a></p> 
   <p><a href="http://bl.ocks.org/denisemauldin/cb870e6f439864a5ae74d4fc561ac46f">Blocks</a></p>
 </div>
+
 
 
 <script src="https://d3js.org/d3.v4.min.js"></script>
@@ -201,6 +648,7 @@
 <script src="https://d3js.org/topojson.v1.min.js"></script>
 <script src="d3-tip.js"></script>
 <script>
+
 var format = d3.format(",");
 
 // Set tooltips
@@ -212,11 +660,11 @@ var tip = d3.tip()
             })
 
 var margin = {top: 0, right: 0, bottom: 0, left: 0},
-            width = 1800 - margin.left - margin.right,
+            width = 1400 - margin.left - margin.right,
             height = 750 - margin.top - margin.bottom;
 
 var color = d3.scaleThreshold()
-    .domain([0.25,0.5,0.75,1,1.25,1.5, 1.75])
+    .domain([1,2,3,4,5, 6, 7])
     .range(["rgb(254,229,217)","rgb(252,187,161)", "rgb(252,146,114)", "rgb(251,106,74)","rgb(239,59,44)","rgb(203,24,29)","rgb(153,0,13)"]);
 
 var path = d3.geoPath();
@@ -280,15 +728,6 @@ function ready(error, data, cotwo) {
             .style("stroke-width",0.3);
         });
 
-    svg.append("text")
-        .attr("x", (width / 2) + 50)             
-        .attr("y", 100 - (margin.top / 2))
-        .attr("text-anchor", "middle")  
-        .style("font-size", "18px") 
-        .style("font-weight", "bold") 
-        .style("fill", "#fe9929")
-        .attr("font-family", "Arvo")
-        .text("Effects: In 20 Years, how will your country be affected?");
 
 
      
@@ -301,14 +740,161 @@ function ready(error, data, cotwo) {
         .attr("text-anchor", "middle")  
         .style("font-size", "10px")
         .style("fill", "grey")
-        .attr("font-family", "Della Respira")
+        .attr("font-family", "Fira Sans")
         .text("Source: IPCC");
 
+        svg.append("line")          // attach a line
+    .style("stroke", "black")  // colour the line
+    .attr("x1", (width -610))     // x position of the first end of the line
+    .attr("y1", height - 230)      // y position of the first end of the line
+    .attr("x2", (width -570))     // x position of the second end of the line
+    .attr("y2", height -200);    // y position of the second end of the line
+
+    svg.append("text")
+        .attr("x", (width -500))             
+        .attr("y", (height -200))
+        .attr("dy", "0em")
+        .attr("text-anchor", "middle")  
+        .style("font-size", "10px")
+        .style("fill", "grey")
+        .attr("font-family", "Fira Sans")
+        .text("Kenya is at risk to droughts");
+
+        svg.append("text")
+        .attr("x", (width -500))             
+        .attr("y", (height -190))
+        .attr("dy", "0em")
+        .attr("text-anchor", "middle")  
+        .style("font-size", "10px")
+        .style("fill", "grey")
+        .attr("font-family", "Fira Sans")
+        .text("and reduced food production.");
+        
+        svg.append("line")          // attach a line
+    .style("stroke", "black")  // colour the line
+    .attr("x1", (width -770))     // x position of the first end of the line
+    .attr("y1", height - 200)      // y position of the first end of the line
+    .attr("x2", (width -800))     // x position of the second end of the line
+    .attr("y2", height -200);    // y position of the second end of the line
+
+
+    svg.append("text")
+        .attr("x", (width -720))             
+        .attr("y", height - 200)
+        .attr("dy", "0em")
+        .attr("text-anchor", "middle")  
+        .style("font-size", "10px")
+        .style("fill", "grey")
+        .attr("font-family", "Fira Sans")
+        .text("Experts believe the");
+
+        svg.append("text")
+        .attr("x", (width -720))             
+        .attr("y", height - 190)
+        .attr("dy", "0em")
+        .attr("text-anchor", "middle")  
+        .style("font-size", "10px")
+        .style("fill", "grey")
+        .attr("font-family", "Fira Sans")
+        .text(" Amazon rainforest could");
+
+        svg.append("text")
+        .attr("x", (width -720))             
+        .attr("y", height - 180)
+        .attr("dy", "0em")
+        .attr("text-anchor", "middle")  
+        .style("font-size", "10px")
+        .style("fill", "grey")
+        .attr("font-family", "Fira Sans")
+        .text("burn down at 2");
+
+        svg.append("text")
+        .attr("x", (width -720))             
+        .attr("y", height - 170)
+        .attr("dy", "0em")
+        .attr("text-anchor", "middle")  
+        .style("font-size", "10px")
+        .style("fill", "grey")
+        .attr("font-family", "Fira Sans")
+        .text("degrees warming");
+
+
+        svg.append("line")          // attach a line
+    .style("stroke", "black")  // colour the line
+    .attr("x1", (width -470))     // x position of the first end of the line
+    .attr("y1", height -420)      // y position of the first end of the line
+    .attr("x2", (width -290))     // x position of the second end of the line
+    .attr("y2", height-400 );    // y position of the second end of the line
+
+
+    svg.append("text")
+        .attr("x", (width -200))             
+        .attr("y", height - 400)
+        .attr("dy", "0em")
+        .attr("text-anchor", "middle")  
+        .style("font-size", "10px")
+        .style("fill", "grey")
+        .attr("font-family", "Fira Sans")
+        .text("Russia could actually benefit");
+
+        svg.append("text")
+        .attr("x", (width -200))             
+        .attr("y", height - 390)
+        .attr("dy", "0em")
+        .attr("text-anchor", "middle")  
+        .style("font-size", "10px")
+        .style("fill", "grey")
+        .style("font-family", "Fira Sans")
+        .text("from large parts of Siberia melting,");
+
+        svg.append("text")
+        .attr("x", (width -200))             
+        .attr("y", height - 380)
+        .attr("dy", "0em")
+        .attr("text-anchor", "middle")  
+        .style("font-size", "10px")
+        .style("fill", "grey")
+        .style("font-family", "Fira Sans")
+        .text("increasing farm land.");
 
         
+        svg.append("line")          // attach a line
+    .style("stroke", "black")  // colour the line
+    .attr("x1", (width -390))     // x position of the first end of the line
+    .attr("y1", height -330)      // y position of the first end of the line
+    .attr("x2", (width -320))     // x position of the second end of the line
+    .attr("y2", height-320 );    // y position of the second end of the line
 
- // y position of the second end of the line
 
+    svg.append("text")
+        .attr("x", (width -260))             
+        .attr("y", height-320)
+        .attr("dy", "0em")
+        .attr("text-anchor", "middle")  
+        .style("font-size", "10px")
+        .style("fill", "grey")
+        .attr("font-family", "Fira Sans")
+        .text("Heating will increase");
+
+        svg.append("text")
+        .attr("x", (width -260))             
+        .attr("y", height-310)
+        .attr("dy", "0em")
+        .attr("text-anchor", "middle")  
+        .style("font-size", "10px")
+        .style("fill", "grey")
+        .attr("font-family", "Fira Sans")
+        .text("rain, heat waves and");
+
+        svg.append("text")
+        .attr("x", (width -260))             
+        .attr("y", height-300)
+        .attr("dy", "0em")
+        .attr("text-anchor", "middle")  
+        .style("font-size", "10px")
+        .style("fill", "grey")
+        .attr("font-family", "Fira Sans")
+        .text("typhoons in Japan");
 
 
   svg.append("path")
@@ -316,10 +902,756 @@ function ready(error, data, cotwo) {
        // .datum(topojson.mesh(data.features, function(a, b) { return a !== b; }))
       .attr("class", "names")
       .attr("d", path);
-
       
 }
 
+
+// Click Update Function
+var dataIndex=1
+
+            //button to swap over datasets
+            d3.select("body").append("button")
+                .text("2040")
+                .attr('class','filter_b1_2040')
+                .on("click",function(){
+
+                  // Load new Data
+                  queue()
+                      .defer(d3.json, "world_countries.json")
+                      .defer(d3.tsv, "df_joined_b1.csv")
+                      .await(ready);
+
+                      var cotwoById = {};
+
+                      cotwo.forEach(function(d) { cotwoById[d.id] = +d.cotwo; });
+                      data.features.forEach(function(d) { d.cotwo = cotwoById[d.id] });
+
+
+                    //select new data
+                    if (dataIndex==1) {
+                        dataIndex=2;  
+                    } else   {
+                        dataIndex=1;
+                    }
+                    //rejoin data
+                    var path = svg.select("g").selectAll("path")
+                        .data(eval("data"+dataIndex));
+                    
+                    path.exit().remove();//remove unneeded circles
+                    path.enter().append("path")
+                    .attr("d", path)
+                    .style("fill", function(d) { return color(cotwoById[d.id]); })
+                    .style('stroke', 'white')
+                    .style('stroke-width', 1.5)
+                    .style("opacity",0.8)
+                    // tooltips
+                    .style("stroke","white")
+                    .style('stroke-width', 0.3)
+                    .on('mouseover',function(d){
+                       tip.show(d);
+
+                       d3.select(this)
+                        .style("opacity", 1)
+                        .style("stroke","white")
+                        .style("stroke-width",3);
+                        })
+                    .on('mouseout', function(d){
+                      tip.hide(d);
+
+                    d3.select(this)
+                      .style("opacity", 0.8)
+                      .style("stroke","white")
+                      .style("stroke-width",0.3);
+                  });
+
+                    //update all circles to new positions
+                    path.transition()
+                        .duration(0)
+                        .attr("r",function(d,i){return d});
+
+                    d3.select("text").text("dataset"+dataIndex);
+
+                    svg.append("path")
+                    .datum(topojson.mesh(data.features, function(a, b) { return a.id !== b.id; }))
+                      // .datum(topojson.mesh(data.features, function(a, b) { return a !== b; }))
+                    .attr("class", "names")
+                    .attr("d", path);
+                  
+
+                });//end click function
+
+
+// End of Update Function
+
+// Revert Back to Previous Dataset
+
+// Click Update Function
+var dataIndex=1
+
+            //button to swap over datasets
+            d3.select("body").append("button")
+                .text("2040")
+                .attr('class','filter_a2_2040')
+                .on("click",function(){
+
+                  // Load new Data
+                  queue()
+                      .defer(d3.json, "world_countries.json")
+                      .defer(d3.tsv, "df_joined_a2_renamed.tsv")
+                      .await(ready);
+
+                      var cotwoById = {};
+
+                      cotwo.forEach(function(d) { cotwoById[d.id] = +d.cotwo; });
+                      data.features.forEach(function(d) { d.cotwo = cotwoById[d.id] });
+
+
+                    //select new data
+                    if (dataIndex==1) {
+                        dataIndex=2;  
+                    } else   {
+                        dataIndex=1;
+                    }
+                    //rejoin data
+                    var path = svg.select("g").selectAll("path")
+                        .data(eval("data"+dataIndex));
+                    
+                    path.exit().remove();//remove unneeded circles
+                    path.enter().append("path")
+                    .attr("d", path)
+                    .style("fill", function(d) { return color(cotwoById[d.id]); })
+                    .style('stroke', 'white')
+                    .style('stroke-width', 1.5)
+                    .style("opacity",0.8)
+                    // tooltips
+                    .style("stroke","white")
+                    .style('stroke-width', 0.3)
+                    .on('mouseover',function(d){
+                       tip.show(d);
+
+                       d3.select(this)
+                        .style("opacity", 1)
+                        .style("stroke","white")
+                        .style("stroke-width",3);
+                        })
+                    .on('mouseout', function(d){
+                      tip.hide(d);
+
+                    d3.select(this)
+                      .style("opacity", 0.8)
+                      .style("stroke","white")
+                      .style("stroke-width",0.3);
+                  });
+
+                    //update all circles to new positions
+                    path.transition()
+                        .duration(1)
+
+                    d3.select("text").text("dataset"+dataIndex);
+
+                    svg.append("path")
+                    .datum(topojson.mesh(data.features, function(a, b) { return a.id !== b.id; }))
+                      // .datum(topojson.mesh(data.features, function(a, b) { return a !== b; }))
+                    .attr("class", "names")
+                    .attr("d", path);
+                  
+
+                });//end click function
+
+
+      // Click Update Function
+//button to swap over datasets
+d3.select("body").append("button")
+    .text("2060")
+    .attr('class','filter_a2_2060')
+    .on("click",function(){
+
+      // Load new Data
+      queue()
+          .defer(d3.json, "world_countries.json")
+          .defer(d3.tsv, "a2_2060.csv")
+          .await(ready);
+
+          var cotwoById = {};
+
+          cotwo.forEach(function(d) { cotwoById[d.id] = +d.cotwo; });
+          data.features.forEach(function(d) { d.cotwo = cotwoById[d.id] });
+
+
+        //select new data
+        if (dataIndex==1) {
+            dataIndex=2;  
+        } else   {
+            dataIndex=1;
+        }
+        //rejoin data
+        var path = svg.select("g").selectAll("path")
+            .data(eval("data"+dataIndex));
+        
+        path.exit().remove();//remove unneeded circles
+        path.enter().append("path")
+        .attr("d", path)
+        .style("fill", function(d) { return color(cotwoById[d.id]); })
+        .style('stroke', 'white')
+        .style('stroke-width', 1.5)
+        .style("opacity",0.8)
+        // tooltips
+        .style("stroke","white")
+        .style('stroke-width', 0.3)
+        .on('mouseover',function(d){
+           tip.show(d);
+
+           d3.select(this)
+            .style("opacity", 1)
+            .style("stroke","white")
+            .style("stroke-width",3);
+            })
+        .on('mouseout', function(d){
+          tip.hide(d);
+
+        d3.select(this)
+          .style("opacity", 0.8)
+          .style("stroke","white")
+          .style("stroke-width",0.3);
+      });
+
+        //update all circles to new positions
+        path.transition()
+            .duration(700)
+
+        d3.select("text").text("dataset"+dataIndex);
+
+        svg.append("path")
+        .datum(topojson.mesh(data.features, function(a, b) { return a.id !== b.id; }))
+          // .datum(topojson.mesh(data.features, function(a, b) { return a !== b; }))
+        .attr("class", "names")
+        .attr("d", path);
+      
+
+    });//end click function
+
+
+    // Click Update Function
+//button to swap over datasets
+d3.select("body").append("button")
+    .text("2080")
+    .attr('class','filter_a2_2080')
+    .on("click",function(){
+
+      // Load new Data
+      queue()
+          .defer(d3.json, "world_countries.json")
+          .defer(d3.tsv, "a2_2080.csv")
+          .await(ready);
+
+          var cotwoById = {};
+
+          cotwo.forEach(function(d) { cotwoById[d.id] = +d.cotwo; });
+          data.features.forEach(function(d) { d.cotwo = cotwoById[d.id] });
+
+
+        //select new data
+        if (dataIndex==1) {
+            dataIndex=2;  
+        } else   {
+            dataIndex=1;
+        }
+        //rejoin data
+        var path = svg.select("g").selectAll("path")
+            .data(eval("data"+dataIndex));
+        
+        path.exit().remove();//remove unneeded circles
+        path.enter().append("path")
+        .attr("d", path)
+        .style("fill", function(d) { return color(cotwoById[d.id]); })
+        .style('stroke', 'white')
+        .style('stroke-width', 1.5)
+        .style("opacity",0.8)
+        // tooltips
+        .style("stroke","white")
+        .style('stroke-width', 0.3)
+        .on('mouseover',function(d){
+           tip.show(d);
+
+           d3.select(this)
+            .style("opacity", 1)
+            .style("stroke","white")
+            .style("stroke-width",3);
+            })
+        .on('mouseout', function(d){
+          tip.hide(d);
+
+        d3.select(this)
+          .style("opacity", 0.8)
+          .style("stroke","white")
+          .style("stroke-width",0.3);
+      });
+
+        //update all circles to new positions
+        path.transition()
+            .duration(700)
+
+        d3.select("text").text("dataset"+dataIndex);
+
+        svg.append("path")
+        .datum(topojson.mesh(data.features, function(a, b) { return a.id !== b.id; }))
+          // .datum(topojson.mesh(data.features, function(a, b) { return a !== b; }))
+        .attr("class", "names")
+        .attr("d", path);
+      
+
+    });//end click function
+
+
+// Click Update Function
+//button to swap over datasets
+d3.select("body").append("button")
+    .text("2100")
+    .attr('class','filter_a2_2100')
+    .on("click",function(){
+
+      // Load new Data
+      queue()
+          .defer(d3.json, "world_countries.json")
+          .defer(d3.tsv, "a2_2100.csv")
+          .await(ready);
+
+          var cotwoById = {};
+
+          cotwo.forEach(function(d) { cotwoById[d.id] = +d.cotwo; });
+          data.features.forEach(function(d) { d.cotwo = cotwoById[d.id] });
+
+
+        //select new data
+        if (dataIndex==1) {
+            dataIndex=2;  
+        } else   {
+            dataIndex=1;
+        }
+        //rejoin data
+        var path = svg.select("g").selectAll("path")
+            .data(eval("data"+dataIndex));
+        
+        path.exit().remove();//remove unneeded circles
+        path.enter().append("path")
+        .attr("d", path)
+        .style("fill", function(d) { return color(cotwoById[d.id]); })
+        .style('stroke', 'white')
+        .style('stroke-width', 1.5)
+        .style("opacity",0.8)
+        // tooltips
+        .style("stroke","white")
+        .style('stroke-width', 0.3)
+        .on('mouseover',function(d){
+           tip.show(d);
+
+           d3.select(this)
+            .style("opacity", 1)
+            .style("stroke","white")
+            .style("stroke-width",3);
+            })
+        .on('mouseout', function(d){
+          tip.hide(d);
+
+        d3.select(this)
+          .style("opacity", 0.8)
+          .style("stroke","white")
+          .style("stroke-width",0.3);
+      });
+
+        //update all circles to new positions
+        path.transition()
+            .duration(700)
+
+        d3.select("text").text("dataset"+dataIndex);
+
+        svg.append("path")
+        .datum(topojson.mesh(data.features, function(a, b) { return a.id !== b.id; }))
+          // .datum(topojson.mesh(data.features, function(a, b) { return a !== b; }))
+        .attr("class", "names")
+        .attr("d", path);
+      
+
+    });//end click function
+
+
+    // Click Update Function
+//button to swap over datasets
+d3.select("body").append("button")
+    .text("2060")
+    .attr('class','filter_b1_2060')
+    .on("click",function(){
+
+      // Load new Data
+      queue()
+          .defer(d3.json, "world_countries.json")
+          .defer(d3.tsv, "b1_2060.csv")
+          .await(ready);
+
+          var cotwoById = {};
+
+          cotwo.forEach(function(d) { cotwoById[d.id] = +d.cotwo; });
+          data.features.forEach(function(d) { d.cotwo = cotwoById[d.id] });
+
+
+        //select new data
+        if (dataIndex==1) {
+            dataIndex=2;  
+        } else   {
+            dataIndex=1;
+        }
+        //rejoin data
+        var path = svg.select("g").selectAll("path")
+            .data(eval("data"+dataIndex));
+        
+        path.exit().remove();//remove unneeded circles
+        path.enter().append("path")
+        .attr("d", path)
+        .style("fill", function(d) { return color(cotwoById[d.id]); })
+        .style('stroke', 'white')
+        .style('stroke-width', 1.5)
+        .style("opacity",0.8)
+        // tooltips
+        .style("stroke","white")
+        .style('stroke-width', 0.3)
+        .on('mouseover',function(d){
+           tip.show(d);
+
+           d3.select(this)
+            .style("opacity", 1)
+            .style("stroke","white")
+            .style("stroke-width",3);
+            })
+        .on('mouseout', function(d){
+          tip.hide(d);
+
+        d3.select(this)
+          .style("opacity", 0.8)
+          .style("stroke","white")
+          .style("stroke-width",0.3);
+      });
+
+        //update all circles to new positions
+        path.transition()
+            .duration(700)
+
+        d3.select("text").text("dataset"+dataIndex);
+
+        svg.append("path")
+        .datum(topojson.mesh(data.features, function(a, b) { return a.id !== b.id; }))
+          // .datum(topojson.mesh(data.features, function(a, b) { return a !== b; }))
+        .attr("class", "names")
+        .attr("d", path);
+      
+
+    });//end click function
+
+    // Click Update Function
+//button to swap over datasets
+d3.select("body").append("button")
+    .text("2080")
+    .attr('class','filter_b1_2080')
+    .on("click",function(){
+
+      // Load new Data
+      queue()
+          .defer(d3.json, "world_countries.json")
+          .defer(d3.tsv, "b1_2080.csv")
+          .await(ready);
+
+          var cotwoById = {};
+
+          cotwo.forEach(function(d) { cotwoById[d.id] = +d.cotwo; });
+          data.features.forEach(function(d) { d.cotwo = cotwoById[d.id] });
+
+
+        //select new data
+        if (dataIndex==1) {
+            dataIndex=2;  
+        } else   {
+            dataIndex=1;
+        }
+        //rejoin data
+        var path = svg.select("g").selectAll("path")
+            .data(eval("data"+dataIndex));
+        
+        path.exit().remove();//remove unneeded circles
+        path.enter().append("path")
+        .attr("d", path)
+        .style("fill", function(d) { return color(cotwoById[d.id]); })
+        .style('stroke', 'white')
+        .style('stroke-width', 1.5)
+        .style("opacity",0.8)
+        // tooltips
+        .style("stroke","white")
+        .style('stroke-width', 0.3)
+        .on('mouseover',function(d){
+           tip.show(d);
+
+           d3.select(this)
+            .style("opacity", 1)
+            .style("stroke","white")
+            .style("stroke-width",3);
+            })
+        .on('mouseout', function(d){
+          tip.hide(d);
+
+        d3.select(this)
+          .style("opacity", 0.8)
+          .style("stroke","white")
+          .style("stroke-width",0.3);
+      });
+
+        //update all circles to new positions
+        path.transition()
+            .duration(700)
+
+        d3.select("text").text("dataset"+dataIndex);
+
+        svg.append("path")
+        .datum(topojson.mesh(data.features, function(a, b) { return a.id !== b.id; }))
+          // .datum(topojson.mesh(data.features, function(a, b) { return a !== b; }))
+        .attr("class", "names")
+        .attr("d", path);
+      
+
+    });//end click function
+
+    // Click Update Function
+//button to swap over datasets
+d3.select("body").append("button")
+    .text("2100")
+    .attr('class','filter_b1_2100')
+    .on("click",function(){
+
+      // Load new Data
+      queue()
+          .defer(d3.json, "world_countries.json")
+          .defer(d3.tsv, "b1_2100.csv")
+          .await(ready);
+
+          var cotwoById = {};
+
+          cotwo.forEach(function(d) { cotwoById[d.id] = +d.cotwo; });
+          data.features.forEach(function(d) { d.cotwo = cotwoById[d.id] });
+
+
+        //select new data
+        if (dataIndex==1) {
+            dataIndex=2;  
+        } else   {
+            dataIndex=1;
+        }
+        //rejoin data
+        var path = svg.select("g").selectAll("path")
+            .data(eval("data"+dataIndex));
+        
+        path.exit().remove();//remove unneeded circles
+        path.enter().append("path")
+        .attr("d", path)
+        .style("fill", function(d) { return color(cotwoById[d.id]); })
+        .style('stroke', 'white')
+        .style('stroke-width', 1.5)
+        .style("opacity",0.8)
+        // tooltips
+        .style("stroke","white")
+        .style('stroke-width', 0.3)
+        .on('mouseover',function(d){
+           tip.show(d);
+
+           d3.select(this)
+            .style("opacity", 1)
+            .style("stroke","white")
+            .style("stroke-width",3);
+            })
+        .on('mouseout', function(d){
+          tip.hide(d);
+
+        d3.select(this)
+          .style("opacity", 0.8)
+          .style("stroke","white")
+          .style("stroke-width",0.3);
+      });
+
+        //update all circles to new positions
+        path.transition()
+            .duration(700)
+
+        d3.select("text").text("dataset"+dataIndex);
+
+        svg.append("path")
+        .datum(topojson.mesh(data.features, function(a, b) { return a.id !== b.id; }))
+          // .datum(topojson.mesh(data.features, function(a, b) { return a !== b; }))
+        .attr("class", "names")
+        .attr("d", path);
+      
+
+    });//end click function
+
+
+
+    // Legend
+
+  var legend = svg.selectAll('g.legendEntry')
+    .data(color.range().reverse())
+    .enter()
+    .append('g').attr('class', 'legendEntry');
+
+legend
+    .append('rect')
+    .attr("x", width - 335)
+    .attr("y", function(d, i) {
+       return (i * 12) + 160;
+    })
+   .attr("width", 10)
+   .attr("height", 10)
+   .style("stroke", "grey")
+   .style("stroke-width", 0.5)
+   .style("fill", function(d){return d;}); 
+       //the data objects are the fill colors
+
+legend
+    .append('text')
+    .attr("x", width - 320) //leave 5 pixel space after the <rect>
+    .attr("y", function(d, i) {
+       return (i * 12) + 160;
+    })
+    .attr("dy", "0.8em") //place text one line *below* the x,y point
+    .style('font-family', 'Fira Sans')
+    .text(function(d,i) {
+        var extent = color.invertExtent(d);
+        //extent will be a two-element array, format it however you want:
+        var format = d3.format("0.2f");
+        return format(+extent[0]) + " - " + format(+extent[1]);
+    });
+
+    legend
+    .append('text')
+    .attr("x", width - 365) //leave 5 pixel space after the <rect>
+    .attr("y", 140)
+    .attr("dy", "0.8em") //place text one line *below* the x,y point
+    .text('Temperature increase (°C)')
+    .style('font-family', 'Fira Sans');
+
+
+// QUIZ
+var myQuestions = [
+  {
+    question: "Which country will see the most heatins in Scenario A1?",
+    answers: {
+      a: 'Finland',
+      b: 'Russia',
+      c: 'Australia'
+    },
+    correctAnswer: 'b'
+  },
+  {
+    question: "Will Scenario A2 or B1 see more warming?",
+    answers: {
+      a: 'A2',
+      b: 'B1',
+      c: 'No Difference'
+    },
+    correctAnswer: 'b'
+  },
+  {
+    question: "How much warming will Brazil see under Scenario A2?",
+    answers: {
+      a: '3 degrees',
+      b: '0.75 degrees',
+      c: '1.2 Degrees'
+    },
+    correctAnswer: 'c'
+  }
+];
+
+var quizContainer = document.getElementById('quiz');
+var resultsContainer = document.getElementById('results');
+var submitButton = document.getElementById('submit');
+
+generateQuiz(myQuestions, quizContainer, resultsContainer, submitButton);
+
+function generateQuiz(questions, quizContainer, resultsContainer, submitButton){
+
+  function showQuestions(questions, quizContainer){
+    // we'll need a place to store the output and the answer choices
+    var output = [];
+    var answers;
+
+    // for each question...
+    for(var i=0; i<questions.length; i++){
+      
+      // first reset the list of answers
+      answers = [];
+
+      // for each available answer...
+      for(letter in questions[i].answers){
+
+        // ...add an html radio button
+        answers.push(
+          '<label>'
+            + '<input type="radio" name="question'+i+'" value="'+letter+'">'
+            + letter + ': '
+            + questions[i].answers[letter]
+          + '</label>'
+        );
+      }
+
+      // add this question and its answers to the output
+      output.push(
+        '<div class="question">' + questions[i].question + '</div>'
+        + '<div class="answers">' + answers.join('') + '</div>'
+      );
+    }
+
+    // finally combine our output list into one string of html and put it on the page
+    quizContainer.innerHTML = output.join('');
+  }
+
+
+  function showResults(questions, quizContainer, resultsContainer){
+    
+    // gather answer containers from our quiz
+    var answerContainers = quizContainer.querySelectorAll('.answers');
+    
+    // keep track of user's answers
+    var userAnswer = '';
+    var numCorrect = 0;
+    
+    // for each question...
+    for(var i=0; i<questions.length; i++){
+
+      // find selected answer
+      userAnswer = (answerContainers[i].querySelector('input[name=question'+i+']:checked')||{}).value;
+      
+      // if answer is correct
+      if(userAnswer===questions[i].correctAnswer){
+        // add to the number of correct answers
+        numCorrect++;
+        
+        // color the answers green
+        answerContainers[i].style.color = 'lightgreen';
+      }
+      // if answer is wrong or blank
+      else{
+        // color the answers red
+        answerContainers[i].style.color = 'red';
+      }
+    }
+
+    // show number of correct answers out of total
+    resultsContainer.innerHTML = numCorrect + ' out of ' + questions.length;
+  }
+
+  // show questions right away
+  showQuestions(questions, quizContainer);
+  
+  // on submit, show results
+  submitButton.onclick = function(){
+    showResults(questions, quizContainer, resultsContainer);
+  }
+
+}
 </script>
 </body>
 </html>

@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>Solutions</title>
+<link href="https://fonts.googleapis.com/css2?family=B612:wght@700&family=Fira+Sans:wght@500;900&family=Karla:wght@500&family=Oxygen:wght@700&display=swap" rel="stylesheet">
+<style>
+
+.node {
+  cursor: pointer;
+}
+
+.node:hover {
+  stroke: #000;
+  stroke-width: 1.5px;
+}
+
+.node--leaf {
+  fill: white;
+}
+
+a {
+  color: yellow;
+}
+
+.label {
+  font: 11px "Fira Sans", Helvetica, Arial, sans-serif;
+  text-anchor: middle;
+  text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, -1px 0 0 #fff, 0 -1px 0 #fff;
+  font-weight: bold;
+}
+
+.svg-container{
+  display: flex;   justify-content: center;
+  }
+
+  .svg-style {
+        background-color: #87ceeb;
+        display: block;
+        margin: auto;
+           }
+
+           .header {
+            padding-top: 25px;
+  padding-bottom: 0px;
+  text-align: center;
+  background:#87ceeb;
+  color:#120a8f;
+  font-size: 30px;
+  font-family: Fira Sans;
+  font-weight: 700;
+
+}
+
+.writing {
+  font-size: 15px;
+  font-family: Fira Sans;
+  font-weight: 500;
+  text-align: center;
+  color:#120a8f;
+  padding-bottom: 10px;
+}
+
+body {
+  background-color: #87ceeb;
+}
+
+input {
+width: 30px;
+margin-left: 20px;
+}
+
+h2 {
+clear: both;
+padding-top: 20px;
+position: absolute;
+top: -100%;
+}
+
+
+
+.quiz {
+margin-top: 20px;
+display:inline-block;
+width:32%;
+}
+
+.submit {
+  display:inline-block;
+  width:32%;
+}
+
+.results {
+  display:inline-block;
+  width:32%;
+}
+
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  margin: 0;
+  position: fixed;
+  font-family: Fira Sans;
+}
+.button2 {
+  background-color:grey ; 
+  color:white; 
+  border: 2px solid #4CAF50;
+  left: 85%;
+  top: 95%;
+}
+
+.button1 {
+  background-color:grey; 
+  color:white; 
+  border: 2px solid #4CAF50;
+  left: 15%;
+  top: 95%;
+}
+
+
+.button1:hover {
+  background-color: #4CAF50;
+  color: white;
+  left: 15%;
+}
+
+.button2:hover {
+  background-color: #4CAF50;
+  color: white;
+  left: 85%;
+}
+
+.footer {
+  position: absolute;
+  clear: both;
+  left: 0;
+  margin-top: 200px;
+  width: 100%;
+  color: white;
+  text-align: center;
+  font-family: Fira Sans;
+  height: 200 px;
+  background-color: black;
+  
+}
+
+
+</style>
+
+<div class="header">
+  <p>Both of these scenarios are terrible. We need to make sure neither of them happen ... <br> Here are some solutions to reduce GHGs.</p>
+</div>
+<div class="writing">
+  <p>Remember, we emit 50 billion tonnes of Greenhouse Gases per year globally.</p>
+  <p>Let's search the solution space &#x1F447; </p>
+</div>
+
+<div class="svg-container">
+  <svg width="960" height="960"></svg>
+</div>
+
+<div class="footer">
+  <button class="button button1"><a href="map_effects.html">Back</a></button>
+  <button class="button button2"><a href="solutions.html">Next</a></button>
+  <p>Challenge Yourself!</p>
+  <div id="quiz"></div>
+  <button id="submit">Get Results</button>
+  <div id="results"></div>
+  <p><a href="https://www.ipcc-data.org/sim/gcm_clim/SRES_TAR/ddc_sres_emissions.html">IPCC Data</a></p> 
+  <p><a href="http://bl.ocks.org/denisemauldin/cb870e6f439864a5ae74d4fc561ac46f">Blocks</a></p>
+</div>
+
+<div id="my_legend"></div>
+
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script>
+
+var svg = d3.select("svg"),
+    margin = 20,
+    diameter = +svg.attr("width"),
+    g = svg.append("g").attr("transform", "translate(" + diameter / 2 + "," + diameter / 2 + ")");
+
+var color = d3.scaleLinear()
+    .domain([-1, 5])
+    .range(["hsl(180,80%,80%)", "hsl(228,30%,40%)"])
+    .interpolate(d3.interpolateHcl);
+
+var pack = d3.pack()
+    .size([diameter - margin, diameter - margin])
+    .padding(2);
+var tooltip = d3.select("body")
+	.append("div")
+	.style("position", "absolute")
+	.style("z-index", "10")
+	.style("visibility", "hidden")
+    .style("background-color", "#d3d3d3")
+    .style("border", "solid")
+    .style("border-width", "1px")
+    .style("border-radius", "5px")
+    .style("padding", "10px")
+    .style("font-size", "11px")
+    .style("font-family", "Fira Sans")
+
+  
+d3.json("Scenario_1.json", function(error, root) {
+  if (error) throw error;
+
+  
+  root = d3.hierarchy(root)
+      .sum(function(d) { return d.size; })
+      .sort(function(a, b) { return b.value - a.value; });
+	 
+  var focus = root,
+      nodes = pack(root).descendants(),
+      view;
+
+      const f = d3.format(".4f");
+
+  var circle = g.selectAll("circle")
+    .data(nodes)
+    .enter().append("circle")
+      .attr("class", function(d) { return d.parent ? d.children ? "node" : "node node--leaf" : "node node--root"; })
+      .style("fill", function(d) { return d.children ? color(d.depth) : null; })
+      .on("click", function(d) { if (focus !== d) zoom(d), d3.event.stopPropagation(); })
+	  .on("mouseover", function(d){return tooltip.text(d.data.name + ' could sequester' + ' ' + f((d.data.size/100)/30) + ' billion tonnes of GHGs per year. This solution involves ' + d.data.details).style("visibility", "visible");})
+	.on("mousemove", function(){return tooltip.style("top", (event.pageY-10)+"px").style("left",(event.pageX+10)+"px");})
+	.on("mouseout", function(){return tooltip.style("visibility", "hidden");});
+
+  var text = g.selectAll("text")
+    .data(nodes)
+    .enter().append("text")
+      .attr("class", "label")
+      .style("fill-opacity", function(d) { return d.parent === root ? 1 : 0; })
+      .style("display", function(d) { return d.parent === root ? "inline" : "none"; })
+      .style('fill', 'darkOrange')
+      .style("font-family", "Fira Sans")
+      .text(function(d) { return d.data.name; });
+	  
+	  
+
+  var node = g.selectAll("circle,text");
+
+  svg
+      .style("background", color(-1))
+      .on("click", function() { zoom(root); });
+
+  zoomTo([root.x, root.y, root.r * 2 + margin]);
+
+  function zoom(d) {
+    var focus0 = focus; focus = d;
+
+    var transition = d3.transition()
+        .duration(d3.event.altKey ? 7500 : 750)
+        .tween("zoom", function(d) {
+          var i = d3.interpolateZoom(view, [focus.x, focus.y, focus.r * 2 + margin]);
+          return function(t) { zoomTo(i(t)); };
+        });
+
+    transition.selectAll("text")
+      .filter(function(d) { return d.parent === focus || this.style.display === "inline"; })
+        .style("fill-opacity", function(d) { return d.parent === focus ? 1 : 0; })
+        .on("start", function(d) { if (d.parent === focus) this.style.display = "inline"; })
+        .on("end", function(d) { if (d.parent !== focus) this.style.display = "none"; });
+  }
+
+  function zoomTo(v) {
+    var k = diameter / v[2]; view = v;
+    node.attr("transform", function(d) { return "translate(" + (d.x - v[0]) * k + "," + (d.y - v[1]) * k + ")"; });
+    circle.attr("r", function(d) { return d.r * k; });
+  }
+  
+  function hovered(hover) {
+  return function(d) {
+	d3.selectAll(d.ancestors().map(function(d) {}));
+  };
+}
+});
+
+
+
+// QUIZ
+var myQuestions = [
+  {
+    question: "Which Solution Category could have the biggest impact?",
+    answers: {
+      a: 'Industry',
+      b: 'Health and Education',
+      c: 'Food and Agriculture'
+    },
+    correctAnswer: 'c'
+  },
+  {
+    question: "What is the most impactful type of land sink?",
+    answers: {
+      a: 'Silvopasture',
+      b: 'Bamboo Production',
+      c: 'Tropical Forest Restoration'
+    },
+    correctAnswer: 'c'
+  },
+  {
+    question: "What type of solution is Alternative Refrigerants?",
+    answers: {
+      a: 'Health & Education',
+      b: 'Transport',
+      c: 'Industry'
+    },
+    correctAnswer: 'c'
+  }
+];
+
+var quizContainer = document.getElementById('quiz');
+var resultsContainer = document.getElementById('results');
+var submitButton = document.getElementById('submit');
+
+generateQuiz(myQuestions, quizContainer, resultsContainer, submitButton);
+
+function generateQuiz(questions, quizContainer, resultsContainer, submitButton){
+
+  function showQuestions(questions, quizContainer){
+    // we'll need a place to store the output and the answer choices
+    var output = [];
+    var answers;
+
+    // for each question...
+    for(var i=0; i<questions.length; i++){
+      
+      // first reset the list of answers
+      answers = [];
+
+      // for each available answer...
+      for(letter in questions[i].answers){
+
+        // ...add an html radio button
+        answers.push(
+          '<label>'
+            + '<input type="radio" name="question'+i+'" value="'+letter+'">'
+            + letter + ': '
+            + questions[i].answers[letter]
+          + '</label>'
+        );
+      }
+
+      // add this question and its answers to the output
+      output.push(
+        '<div class="question">' + questions[i].question + '</div>'
+        + '<div class="answers">' + answers.join('') + '</div>'
+      );
+    }
+
+    // finally combine our output list into one string of html and put it on the page
+    quizContainer.innerHTML = output.join('');
+  }
+
+
+  function showResults(questions, quizContainer, resultsContainer){
+    
+    // gather answer containers from our quiz
+    var answerContainers = quizContainer.querySelectorAll('.answers');
+    
+    // keep track of user's answers
+    var userAnswer = '';
+    var numCorrect = 0;
+    
+    // for each question...
+    for(var i=0; i<questions.length; i++){
+
+      // find selected answer
+      userAnswer = (answerContainers[i].querySelector('input[name=question'+i+']:checked')||{}).value;
+      
+      // if answer is correct
+      if(userAnswer===questions[i].correctAnswer){
+        // add to the number of correct answers
+        numCorrect++;
+        
+        // color the answers green
+        answerContainers[i].style.color = 'lightgreen';
+      }
+      // if answer is wrong or blank
+      else{
+        // color the answers red
+        answerContainers[i].style.color = 'red';
+      }
+    }
+
+    // show number of correct answers out of total
+    resultsContainer.innerHTML = numCorrect + ' out of ' + questions.length;
+  }
+
+  // show questions right away
+  showQuestions(questions, quizContainer);
+  
+  // on submit, show results
+  submitButton.onclick = function(){
+    showResults(questions, quizContainer, resultsContainer);
+  }
+
+}
+
+</script>
