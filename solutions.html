@@ -345,7 +345,7 @@ var size = d3.scaleSqrt()
   .range([7,55])  // Size in pixel
 
 // Add legend: circles
-var valuesToShow = [15, 60, 120]
+var valuesToShow = [5, 40]
 var xCircle = 230
 var xLabel = 380
 var yCircle = 230
@@ -382,7 +382,7 @@ svg
     .attr('x', xLabel)
     .attr('y', function(d){ return yCircle - size(d) } )
     .text( "Gigatons")
-    .text( function(d){ return (d/30) } )
+    .text( function(d){ return (d/20) } )
     .style("font-size", 10)
     .style("font-family", "Fira Sans")
     .attr('alignment-baseline', 'middle')
