@@ -1493,7 +1493,7 @@ d3.select("body").append("button")
 
 
     // Legend
-
+  
   var legend = svg.selectAll('g.legendEntry')
     .data(color.range().reverse())
     .enter()
@@ -1524,7 +1524,7 @@ legend
         var extent = color.invertExtent(d);
         //extent will be a two-element array, format it however you want:
         var format = d3.format("0.1f");
-        return format(+extent[1]);// + " - " + format(+extent[0]); 
+        return format(+extent[0]) + " - " + format(+extent[1]); 
     });
 
     legend

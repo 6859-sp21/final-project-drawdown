@@ -103,6 +103,7 @@ class StripeLines{
 
         }
 
+        const f = d3.format(".2f");
         // Label
         if(self.cfg.label){
             this.itemg.append('text')
