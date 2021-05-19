@@ -2,7 +2,7 @@
 "98.16";"98.16";"Abandoned Farmland Restoration";12.48
 "98.16";4.65;"Biogas for Cooking";49.04
 "98.16";"Buildings";"Improved Clean Cookstoves";31.34
-"0";"Ocean Sinks";"Coastal Wetland Restoration";0.77
+"2";"Ocean Sinks";"Coastal Wetland Restoration";0.77
 "1770";"1770";"LED Lighting";16.07
 "98.16";"Electricity";"Water Distribution Efficiency";0.66;24.19
 "566.38";"Electricity";"Concentrated Solar Power";18.60
@@ -30,30 +30,30 @@
 "4.31";"Industry";"Landfill Methane Capture";2.18
 "284.78";"Industry";"Methane Digesters";9.83
 "383.3";"Engineered Sinks";"Biochar Production";2.22
-"0";"Food & Agriculture";"Nutrient Management";2.34
+"15";"Food & Agriculture";"Nutrient Management";2.34
 "386.92";"Food & Agriculture";"Farm Irrigation Efficiency";1.13
-"0";"Food & Agriculture";"Coastal Wetland Protection";0.99
+"10";"Food & Agriculture";"Coastal Wetland Protection";0.99
 "0";"Food & Agriculture";"Plant-Rich Diets";65.01
 "0";"Food & Agriculture";"Reduced Food Waste";87.45
-"0";"Food & Agriculture";"Forest Protection";5.52
+"5";"Food & Agriculture";"Forest Protection";5.52
 "0";"Food & Agriculture";"Indigenous Peoples’ Forest Tenure";8.69
-"0";"Food & Agriculture";"Grassland Protection";3.35
-"0";"Food & Agriculture";"Peatland Protection and Rewetting";1.36
+"10";"Food & Agriculture";"Grassland Protection";3.35
+"10";"Food & Agriculture";"Peatland Protection and Rewetting";1.36
 "0";"Food & Agriculture";"Sustainable Intensification for Smallholders";1.36
 "91.88";"Food & Agriculture";"Conservation Agriculture";13.40
 "115.82";"Food & Agriculture";"Regenerative Annual Cropping";14.52
 "623.44";"Food & Agriculture";"Improved Rice Production";9.44
 "0";"Food & Agriculture";"System of Rice Intensification";2.78
-"0";"Health and Education";"Health and Education";85.42
+"800";"Health and Education";"Health and Education";85.42
 "63.46";"Industry";"Alternative Cement";7.98
 "60.6";"Industry";"Composting";2.14
-"0";"Industry";"Bioplastics";0.96
+"63";"Industry";"Bioplastics";0.96
 "11.83";"Industry";"Recycling";5.50
 "900.01 ";"Industry";"Recycled Paper";1.10
 "629.25";"Industry";"Refrigerant Management";57.75
 "629.25";"Industry";"Alternative Refrigerants";43.53
-"0";"Land Sinks";"Temperate Forest Restoration";19.42
-"0";"Land Sinks";"Tropical Forest Restoration";54.45
+"92";"Land Sinks";"Temperate Forest Restoration";19.42
+"92";"Land Sinks";"Tropical Forest Restoration";54.45
 "52.89";"Land Sinks";"Managed Grazing";16.42
 "272.91";"Land Sinks";"Silvopasture";26.58
 "92.12";"Land Sinks";"Multistrata Agroforestry";11.30

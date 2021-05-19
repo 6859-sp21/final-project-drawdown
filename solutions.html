@@ -127,15 +127,15 @@ padding: 10px;
 </div>
 
 <div class="footer">
-  <button class="button button1"><a href="circle_pack_tooltip.html">Back</a></button>
-  <button class="button button2"><a href="endpage.html">End</a></button>
-  <p><a href="https://drawdown.org/solutions/table-of-solutions">Drawdown Data</a></p> 
-  <p><a href="https://www.d3-graph-gallery.com/graph/circularpacking_drag.html">Code Used in Design</a></p>
+  <a href="circle_pack_tooltip.html"><button class="button button1">Back</button></a>
+  <a href="endpage.html"><button class="button button2">End</button></a>
+  <p><a href="https://drawdown.org/solutions/table-of-solutions" style="color:yellow">Drawdown Data</a></p> 
+  <p><a href="https://www.d3-graph-gallery.com/graph/circularpacking_drag.html" style="color:yellow">Code</a><a href="https://www.d3-graph-gallery.com/graph/circularpacking_drag.html" style="color:yellow">Used</a> <a href="https://www.d3-graph-gallery.com/graph/bubble_legend.html" style="color:yellow">in Design</a></p>
 </div>
 
-<p id="demo"></p>
 <script>
 
+// Initialise the carbon and cost variables which will be used in showing how much each solution is worth.
 var carbon = 50
 var cost = 0
 
@@ -144,7 +144,7 @@ var cost = 0
 var width = 1200
 var height = 760
 
-// append the svg object to the body of the page
+// attach svg to body
 var svg = d3.select("#my_dataviz")
   .append("svg")
     .attr("width", width)

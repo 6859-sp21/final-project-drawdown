@@ -26,6 +26,7 @@
     }
     .title {
         font-weight: 700;
+        font-family: Fira Sans;
     }
     .itemgroup .label {
         opacity: 0;
@@ -44,8 +45,8 @@
     #yearly {
         position: absolute;
 left: 37%;
-top: 50%;
-width: 1020;
+top: 40%;
+width: 1000;
 transform: translate(-50%, -50%);
 padding: 10px;
     }
@@ -81,8 +82,8 @@ padding: 10px;
 
 .writing3 {
     color: black;
-    position: fixed;
-    top: 10%;
+    position: absolute;
+    top: 80%;
     width:100%;
     text-align: center;
     font-family: Fira Sans;
@@ -136,7 +137,7 @@ padding: 10px;
 .button {
   background-color: #4CAF50; /* Green */
   border: none;
-  color: white;
+  color: grey;
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;
@@ -149,10 +150,11 @@ padding: 10px;
   transform: translate(-50%, -50%);
   margin: 0;
   position: fixed;
+  font-family: Fira Sans;
 }
 .button2 {
   background-color:white ; 
-  color:white; 
+  color:grey; 
   border: 2px solid #4CAF50;
   left: 85%;
   top: 95%;
@@ -160,7 +162,7 @@ padding: 10px;
 
 .button1 {
   background-color:white ; 
-  color:white; 
+  color:grey; 
   border: 2px solid #4CAF50;
   left: 15%;
   top: 95%;
@@ -183,28 +185,19 @@ padding: 10px;
 </style>
 <body>
     
-    <div class="writing">
-        <p>The world is heating ... but by how much? </p>
-      </div>
 
       <div class="writing3">
         <p> Scroll for Average global temperatures &#x1F449; </p>
       </div>
 
-      <div class="writing4">
-        <p>Global Temperature over the past 100 years (Degrees C) </p>
-      </div>
       
     <div id="yearly"></div>
-    <div class="writing2">
-        <p> ... and what colour will our stripes be by 2030? </p>
-      </div>
 
       <div class="footer">
-        <button class="button button1"><a href="intro.html">Back</a></button>
-        <button class="button button2"><a href="you_draw_it.html">Next</a></button>
-        <p><a href="https://data.giss.nasa.gov/gistemp/#tabledata">NASA Data (GSTEMP v4)</a></p> 
-        <p><a href="https://bl.ocks.org/Saigesp/eda813560c801474904004d6b6b1cc4c">Blocks</a></p>
+        <a href="intro.html"><button class="button button1">Back</button></a>
+        <a href="you_draw_it.html"><button class="button button2">Next</button></a>
+        <p><a href="https://data.giss.nasa.gov/gistemp/#tabledata" style="color: yellow">NASA Data (GSTEMP v4)</a></p> 
+        <p><a href="https://bl.ocks.org/Saigesp/eda813560c801474904004d6b6b1cc4c"style="color: yellow">Code Used</a></p>
       </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.13.0/d3.min.js"></script>
@@ -219,8 +212,8 @@ padding: 10px;
             'key': 'yearly',
             'label': 'year',
             'legendRanges': [16,15,14,13],
-            'title': '',
-            'source': ''
+            'title': 'The world is heating ... but by how much?',
+            'source': 'Global Temperature over the past 100 Years (Degrees C)'
         })
 
     })

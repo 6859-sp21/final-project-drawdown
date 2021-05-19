@@ -26,7 +26,7 @@ class StripeLines{
         });
 
         this.cfg.width = parseInt(this.selection.node().offsetWidth) - this.cfg.margin.left - this.cfg.margin.right + 400,
-        this.cfg.height = parseInt(this.selection.node().offsetHeight)- this.cfg.margin.top - this.cfg.margin.bottom + 600;
+        this.cfg.height = parseInt(this.selection.node().offsetHeight)- this.cfg.margin.top - this.cfg.margin.bottom + 500;
 
         this.parseTime = d3.timeParse("%Y");
         this.data.forEach(function(d) {
@@ -86,7 +86,7 @@ class StripeLines{
             this.svg.append('text')
                 .attr('class', 'title label')
                 .attr('text-anchor', 'middle')
-                .style("font-size", "30px")
+                .style("font-size", "20px")
                 .attr("fill", "white")
                 .attr('transform', 'translate('+ (self.cfg.width/2) +',20)')
                 .text(self.cfg.title)
@@ -99,7 +99,7 @@ class StripeLines{
                 .attr("fill", "white")
                 .attr('transform', 'translate('+ (self.cfg.margin.left) +','+(self.cfg.height + self.cfg.margin.top + self.cfg.margin.bottom - 5)+')')
                 .text(self.cfg.source)
-                .style("font-size", "6px")
+                .style("font-size", "10px")
 
         }
 
@@ -124,7 +124,7 @@ class StripeLines{
                 .attr('class', 'legend')
                 .attr('transform', 'translate('+ (self.cfg.width + 4) +',30)');
 
-            [15,14.5,14, 13.5].forEach(function(d, i){
+            [15,14.5,14, 13.5, 13].forEach(function(d, i){
                 var tm = self.legend.append('g')
                     .attr('transform', 'translate(0,'+(i*((self.cfg.width/self.data.length)+5))+')')
 
