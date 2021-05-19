@@ -5,6 +5,8 @@ This Project aims to use data visualization to teach climate breakdown more effe
 The design process was informed by Tamara Munzner's approach. Firstly, the problem domain was characterized (which, in this case, was visualizing climate data), data abstraction processes were based on this problem identification and characterization, before visual encodings and algorithm designs were formulated. 
 
 ![](https://github.com/6859-sp21/final-project-drawdown/blob/main/images/munzner.png)
+
+
 Image from A Nested Model for Visualization Design and Validation. Tamara Munzner. IEEE InfoVis. 2009.
 
 The work also involved prototyping an MVP with students from our class, and also some target users. These informal case studies were used to inform the design process.
